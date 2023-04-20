@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula One Stats</title>
+</head>
+
+<body>
+    <div class = 'wrapper'>
+        <div class = 'left_side'>
+            <form class = 'main_form' action = ' ' method = 'get' >
+                <fieldset>
+                    <input id = 'formula1_team' name = 'formula1_team'/>
+                        <label for = 'formula1_team'>Team</label>
+                    <input id = 'formula1_track' name ='formula1_track'/>
+                        <label for = 'formula1_track'>Track</label>
+                </fieldset>
+                <div class = 'team_track hidden'>
+                    <label for = 'choosen_team'>Choose Team</label>
+                    <textarea id = 'choosen_team' name = 'choosen_team'></textarea>
+                </div>
+                <div class = 'track_track hidden'>
+                    <label for = 'choosen_track'>Choose Track</label>
+                    <textarea id = 'choosen_track' name = 'choosen_track'></textarea>
+                </div>
+                <div>
+                    <button class = 'hidden' type = 'submit'>Load Results</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class = 'right_side'>
+            <p>Select filters to the left and watch the magic happen</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
