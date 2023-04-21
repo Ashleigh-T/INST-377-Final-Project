@@ -13,17 +13,29 @@ body {
   background-color: darkgray;
   display: flex;
   border-style: dashed;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1{
+    margin-left: 20px;
 }
 
 .menu{
     border-style: dashed;
     display:flex;
     justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    margin-right: 40px;
 }
 
-.meun_button{
+.menu_button{
     border-style: dashed;
-    background-color: darkgray;
+    background-color: rgb(211, 207, 207);
+    height:fit-content;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .wrapper {
