@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: darkgray;
+  display: flex;
+  border-style: dashed;
+}
+
+.wrapper {
+  display: flex;
+  background-color:rgb(208, 208, 208);
+  border-style: dashed;
+}
+
+.right_side{
+    background-color: darkgray;
+    border-style: dashed;
+    margin: 20px;
+}
+
+.left_side {
+  display: flex;
+  flex-direction: column;
+  border-style: dashed;
+  margin: 20px;
+}
+
+.box{
+    display:flex;
+    border-style: dashed;
+    background-color:darkgray;
+    margin: 10px;
+}
+
+.links{
+    /* need to put links down the bottom */
+}
