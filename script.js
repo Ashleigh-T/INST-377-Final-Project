@@ -55,6 +55,23 @@ async function mainEvent(){
         ['RedBull','Photos/RedBull/redbull logo.jpg'],
         ['Williams','Photos/Williams/Williams logo.jpg']
     ]);
+    let date = newDate();
+
+
+    const driverRankings = await fetch('http://ergast.com/api/f1/current/driverStandings');
+    const constructorsRanking = await fetch ('http://ergast.com/api/f1/current/constructorStandings');
+    const raceScedule = await fetch('http://ergast.com/api/f1/{{year}}');
+    const lastRace = await fetch('http://ergast.com/api/f1/current/last/results');
+
+    const nextRace = function(){
+        // use lastRace + raceScedule to find next race 
+    }
+
+    const nextRaceInfo = await fetch('http://ergast.com/api/f1/circuits/{{'+nextRace+'}}');
+
+    const nextRaceStats = function(){
+        // use raceSchedule + nextRaceInfo to get stats for injection 
+    }
     
 }
 
