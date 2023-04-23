@@ -8,40 +8,94 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* all header things */
 
 .header {
   background-color: darkgray;
   display: flex;
   border-style: dashed;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
   align-items: center;
+  
 }
 
 h1{
     margin-left: 20px;
 }
 
+/* drop down menu stuff */
 .menu{
     border-style: dashed;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 40%;
+    width: auto;
+    display: flex;
+    flex-direction: row;
     margin-right: 40px;
 }
 
-.menu_button{
-    border-style: dashed;
-    background-color: rgb(211, 207, 207);
-    height:fit-content;
-    padding: 10px;
-    border-radius: 5px;
+menu > li{
+    display: inline;
 }
 
+menu > li:last-of-type{
+    margin-right: 0px;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown > span{
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown:hover .features_menu{ /* to style drop down menu*/
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top: -25px;
+    left: -30px;
+    z-index: 1;
+    padding-top: 60px;
+    margin: 10px;
+    background-color: azure;
+}
+
+.features_menu{
+    display:none;
+}
+
+.features_menu li{ /* to style drop down list items*/
+    list-style: none;
+    padding: 0px 40px 0px 20px; /* location of dropdown buttons */
+    margin-bottom: 10px;
+    font-size:16px;
+}
+
+.menu_button{
+    width: auto;
+    background-color: dimgrey;
+    margin: 20px 40px;
+    padding: 5px 10px;
+    border-style: dotted;
+    font-size:24px;
+}
+
+li{
+    list-style:none;
+}
+
+
+/* all main body styling */
 .wrapper {
   display: flex;
   background-color:rgb(208, 208, 208);
   border-style: dashed;
+  padding-top: 200px;
+  height: 800px;
 }
 
 .right_side{
