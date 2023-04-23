@@ -98,17 +98,53 @@ li{
   height: 800px;
 }
 
+/* right side styling */
 .right_side{
     background-color: darkgray;
     border-style: dashed;
     margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    height:fit-content;
+
 }
 
+/* driver ranking styling*/
+.title{
+    text-align: center;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    padding: 10px;
+}
+
+.driver_info{
+    display:flex;
+    flex-direction:row;
+    margin-bottom:20px;
+}
+
+#rank, #points{
+    border: 2px;
+    border-bottom-style: solid;
+    padding: 10px;
+}
+
+#name{
+    border:2px;
+    border-style: solid;
+    border-top-style: none;
+    padding: 10px 40px;
+}
+
+
+/* left section styling*/
 .left_side {
   display: flex;
   flex-direction: column;
   border-style: dashed;
   margin: 20px;
+  width: 75%;
 }
 
 .box{
@@ -116,8 +152,38 @@ li{
     border-style: dashed;
     background-color:darkgray;
     margin: 10px;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 15px;
 }
 
-.links{
-    /* need to put links down the bottom */
+.info{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    margin-bottom: 10px;
+    align-items: center;
+    height: fit-content;
 }
+
+/* constructors box styling */
+button{
+    padding:5px;
+    height: fit-content;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.box2{
+    border-left-style: solid;
+    width: 20%;
+}
+
+.box2:last-of-type{
+    border-right-style: solid;
+}
+
+
