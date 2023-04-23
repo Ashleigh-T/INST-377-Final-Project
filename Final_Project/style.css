@@ -62,6 +62,7 @@ menu > li:last-of-type{
     padding-top: 60px;
     margin: 10px;
     background-color: azure;
+    border-radius: 5px;
 }
 
 .features_menu{
@@ -72,16 +73,25 @@ menu > li:last-of-type{
     list-style: none;
     padding: 0px 40px 0px 20px; /* location of dropdown buttons */
     margin-bottom: 10px;
+    margin-left: 10px;
     font-size:16px;
+    text-align:left;
+}
+
+/* fixes line up issue with team drop down menu */
+.team li{
+    margin-left: 20px;
 }
 
 .menu_button{
-    width: auto;
+    width: 100px;
     background-color: dimgrey;
     margin: 20px 40px;
     padding: 5px 10px;
     border-style: dotted;
     font-size:24px;
+    border-radius: 15px;
+    text-align:center;
 }
 
 li{
@@ -161,11 +171,11 @@ li{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top-style:solid;
-    border-bottom-style:solid;
     margin-bottom: 10px;
     align-items: center;
     height: fit-content;
+    border-top-style: solid;
+    border-bottom-style: solid;
 }
 
 /* constructors box styling */
@@ -184,6 +194,23 @@ button{
 
 .box2:last-of-type{
     border-right-style: solid;
+}
+
+/* styling for next race box */
+
+.box3{
+    border-left-style: solid;
+    width: 25%;
+    text-align: center;
+    height: 100px;
+}
+
+.box3:first-of-type{
+    border-left-style:none;
+}
+
+.box3 h3{
+    padding: 10px;
 }
 
 
