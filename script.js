@@ -39,3 +39,23 @@ function injectNextRaceStats(list,img){
     let round = document.querySelector("#NRS4");
         round.innerText = list(3);
 }
+
+async function mainEvent(){
+
+    const storedData = localStorage.getItem('storedData');
+    const logoImg = new Map([
+        ['AlfaRomeo','Photos/AlfaRomeo/alfa romeo logo.jpg'],
+        ['AlphaTauri','Photos/AlphaTauri/alpha tauri logo.jpg'],
+        ['Alpine','Photos/Alpine/alpine logo.jpg'],
+        ['AstonMartin',"Photos/AstonMartin/Aston-Martin logo.jpg"],
+        ['Ferrari','Photos/Ferrari/Ferrari-Logo.jpg'],
+        ['Hass','Photos/Hass/haas logo.jpg'],
+        ['Mclaren','Photos/Mclaren/mclaren logo.jpg'],
+        ['Mercedes','Photos/Mercedes/mercedes logo.jpg'],
+        ['RedBull','Photos/RedBull/redbull logo.jpg'],
+        ['Williams','Photos/Williams/Williams logo.jpg']
+    ]);
+    
+}
+
+document.addEventListener("DOMContentLoaded", async () => mainEvent());
