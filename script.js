@@ -4,7 +4,7 @@
     in the un asyc functions i need to work with the json paths to get the data 
 */
 
-
+/*
 function injectDriverRankings(info){
     console.log('fired injectDriverRankings');
     for (let i = 0; i < 20; i++){
@@ -17,7 +17,7 @@ function injectDriverRankings(info){
 }
 
 // if this works with parent selectors change the above method and HTML for the above method as well 
-function injectConstructorRankings(info){
+function injectConstructorRankings(info,logoImg){
     console.log('fired injectConstructorsRankings');
     for(let i = 0; i <10; i++){
         let parent = document.querySelector('#CR'+i+1);
@@ -42,6 +42,8 @@ function injectNextRaceStats(info){
         round.innerText = // put path to find info here 
 }
 
+*/
+
 async function mainEvent(){
 
 // this is all for the main page so far 
@@ -63,12 +65,15 @@ async function mainEvent(){
 
     let results = await fetch('http://ergast.com/api/f1/current/driverStandings');
         const driverRankings = await results.json();
+        console.log(driverRankings);
 
     results = await fetch ('http://ergast.com/api/f1/current/constructorStandings');
         const constructorsRanking = await results.json();
+        console.log(constructorsRanking);
 
     results = await fetch('http://ergast.com/api/f1/current/last/results');
         const lastRace = await results.json();
+        console.log(lastRace);
 
     const nextRound = lastRace.MRData.RaceTable.Round + 1;
 
@@ -77,7 +82,7 @@ async function mainEvent(){
     // with just the .json results 
 
     // all inital injections here 
-    injectConstructorRankings(constructorsRanking);
+    injectConstructorRankings(constructorsRanking,logoImg);
     injectDriverRankings(driverRankings);
     injectNextRaceStats(nextRaceInfo);
 
