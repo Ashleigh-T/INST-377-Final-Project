@@ -135,7 +135,7 @@ li{
     
 }
 
-.rank, .points{
+left_side > .rank, left_side > .points{
     border: 2px;
     border-bottom-style: solid;
     padding: 10px;
