@@ -52,6 +52,7 @@ menu > li:last-of-type{
     cursor: pointer;
 }
 
+/* need to fix scroll issue */
 .dropdown:hover .features_menu{ /* to style drop down menu*/
     display:flex;
     flex-direction: column;
