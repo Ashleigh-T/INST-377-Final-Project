@@ -134,13 +134,13 @@ li{
     margin-bottom:20px;
 }
 
-#rank, #points{
+.rank, .points{
     border: 2px;
     border-bottom-style: solid;
     padding: 10px;
 }
 
-#name{
+.name{
     border:2px;
     border-style: solid;
     border-top-style: none;
