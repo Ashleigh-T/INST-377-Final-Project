@@ -71,7 +71,7 @@ async function mainEvent(){
 
         const nextRound = lastRace.MRData.RaceTable.Round + 1;
 
-        // const nextRaceInfo = await fetch('http://ergast.com/api/f1/{{'+date+'}}/{{'+nextRound+'}}'); 
+    
                        
 });
 
