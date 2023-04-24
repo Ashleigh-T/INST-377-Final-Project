@@ -159,6 +159,25 @@ li{
     width:20%;
 }
 
+.radio_buttons{
+    display:flex;
+    flex-direction: row;
+    border-style: none;
+    padding: 10px 0px;
+}
+
+.lable{
+    margin-right: 10px;
+}
+
+.hidden{
+    display:none;
+}
+
+.visible{
+    display:contents;
+}
+
 
 /* RIGHT SIDE STYLING */
 
@@ -168,6 +187,11 @@ li{
     border-style: dashed;
     margin: 20px;
     width: 75%;
+    justify-content: center;
+}
+
+.right_side > p{
+    align-self: center;
 }
 
 .box{
@@ -192,7 +216,7 @@ li{
 }
 
 /* constructors box styling */
-button{
+button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
     padding:5px;
     height: fit-content;
     background-color: aquamarine;
