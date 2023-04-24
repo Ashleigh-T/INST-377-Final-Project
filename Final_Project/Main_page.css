@@ -39,13 +39,14 @@
     padding: 10px 40px;
 }
 
+/* RIGHT SIDE STYLING*/
+
 .right_side{
     display: flex;
     flex-direction: column;
     border-style: dashed;
     margin: 20px;
     width: 75%;
-    justify-content: center;
 }
 
 .right_side > p{
