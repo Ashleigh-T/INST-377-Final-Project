@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* all header things */
+/* ALL HEADER THINGS */
 
 .header {
   background-color: darkgray;
@@ -100,7 +100,7 @@ li{
 }
 
 
-/* all main body styling */
+/* MAIN BODY STYLING  */
 .wrapper {
   display: flex;
   background-color:rgb(208, 208, 208);
@@ -109,17 +109,17 @@ li{
   height: 800px;
 }
 
-/* right side styling */
-.right_side{
+/* LEFT SIDE STYLING */
+.left_side {
     background-color: darkgray;
     border-style: dashed;
     margin: 20px;
+    margin-left: 100px;
     border-radius: 10px;
     display: flex;
     flex-direction:column;
     height:fit-content;
-
-}
+  }
 
 /* driver ranking styling*/
 .title{
@@ -150,15 +150,24 @@ li{
     padding: 10px 40px;
 }
 
+/* main form styling*/
 
-/* left section styling*/
+.main_form{
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    width:20%;
+}
 
-.left_side {
-  display: flex;
-  flex-direction: column;
-  border-style: dashed;
-  margin: 20px;
-  width: 75%;
+
+/* RIGHT SIDE STYLING */
+
+.right_side{
+    display: flex;
+    flex-direction: column;
+    border-style: dashed;
+    margin: 20px;
+    width: 75%;
 }
 
 .box{
