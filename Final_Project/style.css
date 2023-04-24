@@ -131,13 +131,15 @@ li{
 .driver_info{
     display:flex;
     flex-direction:row;
-    margin-bottom:20px;
+    
 }
 
 .rank, .points{
     border: 2px;
     border-bottom-style: solid;
     padding: 10px;
+    width: 50px;
+    text-align: center;
 }
 
 .name{
