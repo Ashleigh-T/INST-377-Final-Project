@@ -135,7 +135,7 @@ li{
     
 }
 
-left_side > .rank, left_side > .points{
+.rank, .points{
     border: 2px;
     border-bottom-style: solid;
     padding: 10px;
@@ -152,6 +152,7 @@ left_side > .rank, left_side > .points{
 
 
 /* left section styling*/
+
 .left_side {
   display: flex;
   flex-direction: column;
@@ -190,10 +191,15 @@ button{
     margin: 5px;
 }
 
+.box2 > .rank, .box2 > .points {
+    border-bottom-style:none;
+}
+
 .box2{
     border-left-style: solid;
     width: 20%;
 }
+
 
 .box2:last-of-type{
     border-right-style: solid;
