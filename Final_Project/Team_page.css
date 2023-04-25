@@ -6,7 +6,7 @@
 .left_side{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     margin: 40px;
 }
 
@@ -92,8 +92,6 @@
     
 }
 
-
-
 .button{
     height: 20px;
     margin: 10px;
@@ -108,4 +106,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.box:first-of-type{
+    border-style:none;
+}
+
+.box:last-of-type{
+    border-right-style:solid;
+}
+
+/* RIGHT SIDE STYLING */
+
+.right_side{
+    display:flex;
+    flex-direction: row-reverse;
+    margin: 40px;
+}
+
+.info_box{
+    display:flex;
+    flex-direction: column;
+    background-color: beige;
+    border-radius: 15px;
+    width: 400px;
+    margin-left: 40px;
+    padding: 0px 20px;
+}
+
+.logo{
+   width: 30%;
+   align-self: center;
+   padding: 10px;
+}
+
+#car{
+    padding: 20px;
+    background-color: beige;
+    border-radius: 15px;
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
 }
