@@ -1,0 +1,164 @@
+
+/* LEFT SIDE STYLING */
+
+.left_side{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 40px;
+}
+
+#driver_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    background-color: beige;
+    padding: 10px;
+}
+
+.photo{
+    border-radius: 15px;
+    background-color: beige;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    align-self: center;
+}
+
+.photo > img{
+    height: 300px;
+}
+
+.info_box{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    background-color: beige;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* RIGHT SIDE STYLING */
+
+.right_side{
+    display:flex;
+    flex-direction:column;
+    margin: 40px;
+    width: 75%;
+}
+
+/* styling for postion boxes */
+.positions{
+    display:flex;
+    flex-direction: row;
+    border-radius: 15px;
+    background-color: bisque;
+    height: 140px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    
+}
+
+.button{
+    height: 20px;
+    margin: 10px;
+    width: 100px;
+}
+
+.box{
+    width: 20%;
+    height: 100%;
+    border-left-style:solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box:first-of-type{
+    border-style: none;
+    display: flex;
+    align-items: flex-start;
+}
+
+.box:last-of-type{
+    border-right-style:solid;
+}
+
+.race_stats{
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    
+}
+
+/* upcoming race stats box styling */
+
+.top{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* qualifying boxes */
+.q_boxes{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    margin-right: 100px;
+}
+
+.q_boxes > div{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-color:bisque;
+    border-radius: 15px;
+}
+
+/* other stat boxes */
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 40px;
+}
+
+.box2{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.box2:last-of-type{
+    margin-right: 0px;
+}
+
+.box2 > div{
+    display: flex;
+    align-items: center;
+    border-radius:25px ;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: azure;
+    padding: 10px;
+}
