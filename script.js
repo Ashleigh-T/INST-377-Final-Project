@@ -24,6 +24,16 @@ function injectDriversPoints(driver_rankings){
     };
 }
 
+function injectConstructorRank(index){
+    for(index ; index < index+5; index++){
+        const box = document.querySelector('#CR'+(index+1));
+        console.log(box);
+        const spot = box.querySelector('.rank');
+        console.log(spot);
+        spot.innerHTML = (index + 1);
+    }
+}
+
 
 async function mainEvent(){
 
@@ -87,6 +97,8 @@ team_page.forEach( item => {
 
     injectDriverNames(driver_rankings);
     injectDriversPoints(driver_rankings);
+
+    injectConstructorRank(0);
 
 }
 
