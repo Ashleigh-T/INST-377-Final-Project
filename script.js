@@ -7,12 +7,22 @@
 function injectDriverNames(driver_rankings){
     for (let i = 0; i <20; i++){
         const spot = document.querySelector('#name'+(i+1));
-        console.log(spot);
+        //console.log(spot);
         spot.innerHTML = driver_rankings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName;
-        console.log(driver_rankings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName);
-        console.log(spot);
+        //console.log(driver_rankings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.familyName);
+        //console.log(spot);
     };
 };
+
+function injectDriversPoints(driver_rankings){
+    for (let i = 0; i <20; i++){
+        const spot = document.querySelector('#points'+(i+1));
+        //console.log(spot);
+        spot.innerHTML = driver_rankings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].points;
+        //console.log(driver_rankings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].points);
+        //console.log(spot);
+    };
+}
 
 
 async function mainEvent(){
@@ -76,6 +86,7 @@ team_page.forEach( item => {
     console.log(last_race_results);
 
     injectDriverNames(driver_rankings);
+    injectDriversPoints(driver_rankings);
 
 }
 
