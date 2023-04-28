@@ -44,38 +44,44 @@ function injectNextRaceStats(info){
 
 */
 
+
 async function mainEvent(){
 
+// Header Functionality
+const driver_page = document.querySelectorAll('.driver_button');
+const team_page = document.querySelectorAll('.team_button');
+
+driver_page.forEach( item => {
+    item.addEventListener('click', (event) => {
+        console.log(item.innerHTML);
+        // inner HTML is driver name we can use this as param of function to 
+        // populate driver page correctly on load 
+    }); 
+});
+
+team_page.forEach( item => {
+    item.addEventListener('click',(event) => {
+        console.log(item.innerHTML);
+        // inner HTML is team name we can use this as param of function to 
+        // populate team page correctly on load 
+    });
+});
+
+
+
+
+
+
+
+/*
 // this is all for the main page so far 
 // below are the varibles that need to be global for everything to work 
  const left_button = document.querySelector("#left_button");
  const right_button = document.querySelector('#right_button');
+ 
 
- right_button.addEventListener('click', () => {
-    console.log("click!!!");
- });
 
-    left_button.addEventListener("click", async (submitEvent) =>{
-        console.log("click happened");
-        let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
-        const driverRankings = await results.json();
-        console.log(driverRankings);
 
-        results = await fetch ('http://ergast.com/api/f1/current/constructorStandings.json');
-        const constructorsRanking = await results.json();
-        console.log(constructorsRanking);
-
-        results = await fetch('http://ergast.com/api/f1/current/last/results.json');
-        const lastRace = await results.json();
-        console.log(lastRace);
-
-        const nextRound = lastRace.MRData.RaceTable.Round + 1;
-
-    
-                       
-});
-
-/*
     const logoImg = new Map([
         ['AlfaRomeo','Photos/AlfaRomeo/alfa romeo logo.jpg'],
         ['AlphaTauri','Photos/AlphaTauri/alpha tauri logo.jpg'],
