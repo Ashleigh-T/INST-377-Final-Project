@@ -92,6 +92,10 @@ button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
     width: 20%;
 }
 
+.box2 > img{
+    width: 75%;
+}
+
 
 .box2:last-of-type{
     border-right-style: solid;
