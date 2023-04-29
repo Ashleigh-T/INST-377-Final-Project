@@ -51,13 +51,27 @@ function injectConstructorPoints(r_index,constructors_ranking){
 function injectConstructorLogos(r_index,constructors_ranking,logos){
     for(let index = 0; index < 5; index++){
         const box = document.querySelector('#CR'+(index+1));
-        console.log(box);
+        //console.log(box);
         const key = constructors_ranking.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[r_index].Constructor.name;
-        console.log(logos.get(key));
+        //console.log(logos.get(key));
         box.querySelector('img').src = logos.get(key);
         r_index++;
     }
+};
+
+function injectFirstRowNRS(race_info,round){
+    let spot = document.querySelector('#NRS1 > h4');
+    console.log(spot);
+        spot.innerHTML = race_info.MRData.RaceTable.Races[round].Circuit.circuitName;
+    spot = document.querySelector('#NRS2 > h4');
+        spot.innerHTML = race_info.MRData.RaceTable.Races[round].Circuit.Location.country;
+    spot = document.querySelector("#NRS3 > h4");
+        spot.innerHTML = (race_info.MRData.RaceTable.Races[round].time);
+    spot = document.querySelector("#NRS4 > h4");
+        spot.innerHTML = round;
+
 }
+
 
 async function mainEvent(){
 
@@ -80,13 +94,6 @@ team_page.forEach( item => {
         // populate team page correctly on load 
     });
 });
-
-
-
-
-
-
-
 
 // this is all for the main page so far 
 // below are the varibles that need to be global for everything to work 
@@ -113,11 +120,14 @@ team_page.forEach( item => {
 
  results = await fetch ('http://ergast.com/api/f1/current/constructorStandings.json');
     const constructors_ranking = await results.json();
-    console.log(constructors_ranking);
+    //console.log(constructors_ranking);
 
- results = await fetch('http://ergast.com/api/f1/current/last/results.json');
-    const last_race_results = await results.json();
-    console.log(last_race_results);
+ const last_round = driver_rankings.MRData.StandingsTable.StandingsLists[0].round;
+    //console.log(last_round);
+
+ results = await fetch('http://ergast.com/api/f1/current.json');
+    const races = await results.json();
+    console.log(races);
 
     injectDriverNames(driver_rankings);
     injectDriversPoints(driver_rankings);
@@ -125,6 +135,8 @@ team_page.forEach( item => {
     injectConstructorRank(1);
     injectConstructorPoints(0,constructors_ranking);
     injectConstructorLogos(0,constructors_ranking,logo_img);
+
+    injectFirstRowNRS(races,last_round);
 }
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
