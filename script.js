@@ -61,7 +61,7 @@ function injectConstructorLogos(r_index,constructors_ranking,logos){
 
 function injectFirstRowNRS(race_info,round){
     let spot = document.querySelector('#NRS1 > h4');
-    console.log(spot);
+    //console.log(spot);
         spot.innerHTML = race_info.MRData.RaceTable.Races[round].Circuit.circuitName;
     spot = document.querySelector('#NRS2 > h4');
         spot.innerHTML = race_info.MRData.RaceTable.Races[round].Circuit.Location.country;
@@ -70,7 +70,18 @@ function injectFirstRowNRS(race_info,round){
     spot = document.querySelector("#NRS4 > h4");
         spot.innerHTML = round;
 
-}
+};
+
+function injectLastRowNRS(next_race_info,qualifying,fastest_lap){
+    let spot = document.querySelector('#NRS5 > h4');
+        spot.innerHTML = qualifying.MRData.RaceTable.Races[0].QualifyingResults[0].Driver.familyName;
+    spot = document.querySelector('#NRS6 > h4');
+        spot.innerHTML = next_race_info.MRData.RaceTable.Races[0].Results[0].Driver.familyName;
+    spot = document.querySelector('#NRS7 > h4');
+        spot.innerHTML = fastest_lap.MRData.RaceTable.Races[0].Results[0].Driver.familyName;
+    spot = document.querySelector('#NRS8 > h4')
+        spot.innerHTML = fastest_lap.MRData.RaceTable.Races[0].Results[0].FastestLap.Time.time;
+};
 
 
 async function mainEvent(){
@@ -127,7 +138,30 @@ team_page.forEach( item => {
 
  results = await fetch('http://ergast.com/api/f1/current.json');
     const races = await results.json();
-    console.log(races);
+    //console.log(races);
+
+    const next_race = races.MRData.RaceTable.Races[last_round].Circuit.circuitId;
+    
+
+    let address = 'https://ergast.com/api/f1/2022/circuits/'+next_race+'/results.json';
+    console.log(address);
+
+ results = await fetch(address);
+    const next_race_info = await results.json();
+    console.log(next_race_info);
+
+    address = 'https://ergast.com/api/f1/2022/circuits/'+next_race+'/qualifying/1.json';
+
+ results = await fetch(address);
+    const qualifying = await results.json();
+    console.log(qualifying);
+
+    address = 'https://ergast.com/api/f1/2022/circuits/'+next_race+'/fastest/1/results.json';
+
+ results = await fetch(address);
+    const fastest_lap = await results.json();
+    console.log(fastest_lap);
+
 
     injectDriverNames(driver_rankings);
     injectDriversPoints(driver_rankings);
@@ -137,6 +171,7 @@ team_page.forEach( item => {
     injectConstructorLogos(0,constructors_ranking,logo_img);
 
     injectFirstRowNRS(races,last_round);
+    injectLastRowNRS(next_race_info,qualifying,fastest_lap);
 }
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
