@@ -4,6 +4,9 @@
     in the un asyc functions i need to work with the json paths to get the data 
 */
 
+// ALL FUNCTIONS FOR FIRST PAGE 
+
+// all functions for driver rankings
 function injectDriverNames(driver_rankings){
     for (let i = 0; i <20; i++){
         const spot = document.querySelector('#name'+(i+1));
@@ -24,6 +27,7 @@ function injectDriversPoints(driver_rankings){
     };
 };
 
+// all functions for constructors rankings 
 function injectConstructorRank(r_index){
     for(let index = 0 ; index < 5 ; index++){
         const box = document.querySelector('#CR'+(index+1));
@@ -59,6 +63,9 @@ function injectConstructorLogos(r_index,constructors_ranking,logos){
     }
 };
 
+// Need to create the button functions !!!
+
+// all functions for next race info
 function injectFirstRowNRS(race_info,round){
     let spot = document.querySelector('#NRS1 > h4');
     //console.log(spot);
@@ -84,16 +91,77 @@ function injectLastRowNRS(next_race_info,qualifying,fastest_lap){
 };
 
 
+// ALL FUCNTIONS FOR DRIVERS PAGE 
+function injectDriverNameAndPhoto(name,photo){
+    let spot = document.querySelector('#driver_name');
+    console.log(spot);
+    spot.innerText = name;
+    spot = document.querySelector('.photo');
+    spot.querySelector('img').src = photo;
+}
+
 async function mainEvent(){
 
 // Header Functionality -- dynamic page loading 
 const driver_page = document.querySelectorAll('.driver_button');
 const team_page = document.querySelectorAll('.team_button');
+const drivers = new Map([
+    ['Max Verstappen', 'max_verstappen'],
+    ['Sergio Perez', 'perez'],
+    ['Fernando Alonso', 'alonso'],
+    ['Lewis Hamilton', 'hamilton'],
+    ['Carlos Sainz','sainz'],
+    ['Charles Leclerc','leclerc'],
+    ['George Russell','russell'],
+    ['Lance Stroll','stroll'],
+    ['Lando Norris','norris'],
+    ['Nico Hulkenberg','hulkenberg'],
+    ['Oscar Piastri', 'piastri'],
+    ['Valtteri Bottas','bottas'],
+    ['Esteban Ocon','ocon'],
+    ['Pierre Gasly','gasly'],
+    ['Zhou Guanyu','zhou'],
+    ['Yuki Tsunoda','tsunoda'],
+    ['Alex Albon','albon'],
+    ['Kevin Magnussen','kevin_magnussen'],
+    ['Logan Sargeant','sargeant'],
+    ['Nyck De Vries','de_vries']
+]);
+
+const driver_team = new Map([
+    [['Max Verstappen', 'RedBull'],
+    ['Sergio Perez', 'RedBull'],
+    ['Fernando Alonso', 'AstonMartin'],
+    ['Lewis Hamilton', 'Mercedes'],
+    ['Carlos Sainz','Ferrari'],
+    ['Charles Leclerc','Ferrari'],
+    ['George Russell','Mercedes'],
+    ['Lance Stroll','AstonMartin'],
+    ['Lando Norris','McLaren'],
+    ['Nico Hulkenberg','Haas'],
+    ['Oscar Piastri', 'McLaren'],
+    ['Valtteri Bottas','AlfaRomeo'],
+    ['Esteban Ocon','Alpine'],
+    ['Pierre Gasly','Alpine'],
+    ['Zhou Guanyu','AlfaRomeo'],
+    ['Yuki Tsunoda','AlphaTauri'],
+    ['Alex Albon','Williams'],
+    ['Kevin Magnussen','Haas'],
+    ['Logan Sargeant','Williams'],
+    ['Nyck De Vries','AlphaTauri']]
+]);
 
 driver_page.forEach( item => {
     item.addEventListener('click', (event) => {
         console.log(item.innerHTML);
-        // inner HTML is driver name we can use this as param of function to 
+        const key1 = drivers.get(item.innerHTML);
+        console.log(key1);
+        const key2 = driver_team.get(item.innerHTMl);
+        console.log(key2);
+        injectDriverNameAndPhoto(item.innerHTML,'Photos/'+ key2 +'/'+ key1 +'.jpg');
+
+        //let data = await fetch();
+            //driver_data = await data.json(); 
         // populate driver page correctly on load 
     }); 
 });
@@ -123,11 +191,12 @@ team_page.forEach( item => {
         ['Williams','Final_Project/Photos/Williams/Williams logo.jpg']
     ]);
 
+
     
 
  let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
     const driver_rankings = await results.json();
-    //console.log(driver_rankings);
+    console.log(driver_rankings);
 
  results = await fetch ('http://ergast.com/api/f1/current/constructorStandings.json');
     const constructors_ranking = await results.json();
