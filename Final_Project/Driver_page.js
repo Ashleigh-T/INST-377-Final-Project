@@ -33,7 +33,18 @@ function injectInfoBox(team,key,curr_standings,hist_standings){
         spot.innerHTML = 'Debut: ' + hist_standings.MRData.StandingsTable.StandingsLists[0].season;
 };
 
-function injectGridPosition(){
+function injectGridPosition(grid_positions,race_names){
+    for(let i = 1; i < 6; i++){
+        if(grid_positions[i-1] != null){
+        let spot = document.querySelector("#GB"+i+'> p:first-of-type');
+            //console.log(spot);
+            spot.innerHTML = race_names[i-1];
+        spot = document.querySelector("#GB"+i+'> p:last-of-type')
+            //console.log(spot);
+            spot.innerHTML = grid_positions[i-1];
+        };
+    };
+
 
 };
 
@@ -112,21 +123,43 @@ async function mainEvent(){
     // current standings 
     let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
         const curr_standings= await results.json();
-        console.log(curr_standings);
+        //console.log(curr_standings);
 
     // historical standings 
     let address = 'http://ergast.com/api/f1/drivers/'+drivers.get(driver)+'/driverStandings.json';
         results = await fetch(address);
         const hist_standings = await results.json();
-        console.log(hist_standings);
+        //console.log(hist_standings);
 
-
+    
+    // grid positions + race names for first 5 races 
+    let grid_positions = [];
+    let race_names = [];
+        for(let i = 1; i < 6; i++){
+            try{
+            address = 'https://ergast.com/api/f1/2023/'+ i +'/drivers/'+ drivers.get(driver) +'/qualifying.json';
+                results = await fetch(address);
+                let grid_data = await results.json();
+                //console.log('race: '+i);
+                //console.log(grid_data);
+                grid_positions[i-1] = grid_data.MRData.RaceTable.Races[0].QualifyingResults[0].position;
+                race_names[i-1] = grid_data.MRData.RaceTable.Races[0].Circuit.circuitName;
+            } catch (error){
+                grid_positions[i-1] = null;
+                race_names[i-1] = null;
+            }
+        };
+        //console.log(grid_positions);
+        //console.log(race_names);
 
     // ALL INJECTTIONS 
 
-    
+    // all left page injections 
     injectDriverNameAndPhoto(driver,'Photos/'+ driver_team.get(driver)+ '/'+drivers.get(driver)+'.jpg');
     injectInfoBox(driver_team.get(driver),drivers.get(driver),curr_standings,hist_standings);
+    
+    // all carousel injections 
+    injectGridPosition(grid_positions,race_names);
 };
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
