@@ -5,7 +5,7 @@ const team_page = document.querySelectorAll('.team_button');
 
 driver_page.forEach( item => {
     item.addEventListener('click', (event) => {
-        console.log(item.innerHTML);
+       //console.log(item.innerHTML);
         localStorage.setItem('Driver',item.innerHTML)
     }); 
 });
