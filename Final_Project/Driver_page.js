@@ -48,12 +48,26 @@ function injectGridPosition(grid_positions,race_names){
 
 };
 
-function injectFinishingPostion(){
+function injectFinishingPostion(finishing_positions,race_names){
+    for(let i = 1; i < 6; i++){
+        if(finishing_positions[i-1] != null){
+        let spot = document.querySelector("#FB"+i+'> p:first-of-type');
+            //console.log(spot);
+            spot.innerHTML = race_names[i-1];
+        spot = document.querySelector("#FB"+i+'> p:last-of-type')
+            //console.log(spot);
+            spot.innerHTML = finishing_positions[i-1];
+        };
+    };
 
 };
 
-function injectQBoxes(){
-
+function injectQBoxes(q_times){
+    for(let i = 1; i<4; i++){
+        let spot = document.querySelector('#q'+ i +' > p:last-of-type');
+        //console.log(spot);
+        spot.innerHTML = q_times[i-1];
+    }
 };
 
 function injectLeftStats(){
@@ -123,7 +137,7 @@ async function mainEvent(){
     // current standings 
     let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
         const curr_standings= await results.json();
-        //console.log(curr_standings);
+        console.log(curr_standings);
 
     // historical standings 
     let address = 'http://ergast.com/api/f1/drivers/'+drivers.get(driver)+'/driverStandings.json';
@@ -152,6 +166,52 @@ async function mainEvent(){
         //console.log(grid_positions);
         //console.log(race_names);
 
+    // finishing positions 
+    let finishing_positions = [];
+        for(let i = 1; i < 6; i++){
+            try{
+                address = 'https://ergast.com/api/f1/2023/'+ i +'/drivers/'+ drivers.get(driver) +'/results.json';
+                    results = await fetch(address);
+                    let finishing_data = await results.json();
+                    //console.log(finishing_data);
+                    finishing_positions[i-1] = finishing_data.MRData.RaceTable.Races[0].Results[0].position;
+
+            } catch (error){
+                finishing_positions[i-1] = null;
+            }
+        }
+        //console.log(finishing_positions);
+
+    // last round 
+    const last_round = curr_standings.MRData.StandingsTable.StandingsLists[0].round;
+
+    // Qualifying times 
+    let q_times = [];
+        address = 'https://ergast.com/api/f1/2023/'+ last_round + 1 +'/drivers/'+ drivers.get(driver) +'/qualifying.json';
+            results = await fetch(address);
+            q_data = await results.json();
+            console.log(q_data);
+            try{
+                q_times[0] = q_data.MRData.RaceTable.Races[0].QualifyingResults[0].Q1;
+            }catch(error){
+                q_times[0] = null;
+            };
+
+            try{
+                q_times[1] = q_data.MRData.RaceTable.Races[0].QualifyingResults[0].Q2;
+            }catch(error){
+                q_times[1] = null;
+            };
+
+            try{
+                q_times[2] = q_data.MRData.RaceTable.Races[0].QualifyingResults[0].Q3;
+            }catch(error){
+                q_times[2] = null;
+            };
+        //console.log(q_times);
+            
+            
+
     // ALL INJECTTIONS 
 
     // all left page injections 
@@ -160,6 +220,11 @@ async function mainEvent(){
     
     // all carousel injections 
     injectGridPosition(grid_positions,race_names);
+    injectFinishingPostion(finishing_positions,race_names);
+
+    // all stats box injections 
+    injectQBoxes(q_times);
+
 };
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
