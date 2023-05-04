@@ -11,8 +11,26 @@ function injectDriverNameAndPhoto(name,photo){
     spot.querySelector('img').src = photo;
 };
 
-function injectInfoBox(team,curr_standings,hist_standings){
+function injectInfoBox(team,key,curr_standings,hist_standings){
+    let spot = document.querySelector('.info_box > p:nth-of-type(1)');
+        spot.innerHTML = 'Team: '+ team;
 
+    let index = -1;
+        for(let i = 0; i <20 ; i++){
+            if (curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.driverId == key){
+                index = i;
+            };
+        };
+        //console.log(index);
+
+    spot = document.querySelector('.info_box > p:nth-of-type(2)');
+        spot.innerHTML = 'Driver #: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].Driver.permanentNumber;
+    spot = document.querySelector('.info_box > p:nth-of-type(3)');
+        spot.innerHTML = 'Rank: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].position;
+    spot = document.querySelector('.info_box > p:nth-of-type(4)');
+        spot.innerHTML = 'Points: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].points;
+    spot = document.querySelector('.info_box > p:nth-of-type(5)');
+        spot.innerHTML = 'Debut: ' + hist_standings.MRData.StandingsTable.StandingsLists[0].season;
 };
 
 function injectGridPosition(){
@@ -108,7 +126,7 @@ async function mainEvent(){
 
     
     injectDriverNameAndPhoto(driver,'Photos/'+ driver_team.get(driver)+ '/'+drivers.get(driver)+'.jpg');
-
+    injectInfoBox(driver_team.get(driver),drivers.get(driver),curr_standings,hist_standings);
 };
 
 document.addEventListener("DOMContentLoaded", async () => mainEvent());
