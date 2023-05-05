@@ -85,8 +85,17 @@ function injectLeftStats(prev_quali,prev_stats){
 function injectRightStats(prev_stats,circuit_name,round){
     let spot = document.querySelector('#prev_fast_lap > p');
         console.log(spot);
-        spot.innerHTML = 'Previous Fastest Lap: ' + 
-
+        spot.innerHTML = 'Previous Fastest Lap: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].FastestLap.Time.time;
+    spot = document.querySelector('#sprint > p');
+        console.log(spot);
+        if(circuit_name.MRData.RaceTable.Races[0].Sprint != undefined){
+            spot.innerHTML = 'Sprint: ' + circuit_name.MRData.RaceTable.Races[0].Sprint.time;
+        } else {
+            spot.innerHTML = 'Sprint: No';
+        };
+    spot = document.querySelector('#round > p');
+        console.log(spot);
+        spot.innerHTML = 'Round: ' + round;
 };
 
 async function mainEvent(){
@@ -198,7 +207,7 @@ async function mainEvent(){
 
     // Qualifying times 
     let q_times = [];
-        address = 'https://ergast.com/api/f1/2023/'+ last_round + 1 +'/drivers/'+ drivers.get(driver) +'/qualifying.json';
+        address = 'https://ergast.com/api/f1/2023/'+ (Number(last_round) + 1) +'/drivers/'+ drivers.get(driver) +'/qualifying.json';
             results = await fetch(address);
             q_data = await results.json();
             //console.log(q_data);
@@ -223,12 +232,13 @@ async function mainEvent(){
 
     // circuit name + sprint yay or nah
 
-    address = 'http://ergast.com/api/f1/2023/'+ (Number(last_round) + 1 ) +'.json';
+    address = 'http://ergast.com/api/f1/2023/'+ (Number(last_round) + 1) +'.json';
         //console.log(address);
         results = await fetch(address);
-        cicuit_info = await results.json();
-        //console.log(cicuit_info);
-        circuit_name = cicuit_info.MRData.RaceTable.Races[0].Circuit.circuitId;
+        circuit_info = await results.json();
+        console.log('circuit info');
+        console.log(circuit_info);
+        circuit_name = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitId;
 
             
     // Previous grid + finsihing + fastest lap
@@ -257,7 +267,7 @@ async function mainEvent(){
     // all stats box injections 
     injectQBoxes(q_times);
     injectLeftStats(prev_quali,prev_stats);
-    injectRightStats(prev_stats,circuit_name,Number(last_round) + 1);
+    injectRightStats(prev_stats,circuit_info,Number(last_round) + 1);
 
 };
 
