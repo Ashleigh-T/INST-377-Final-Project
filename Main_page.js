@@ -89,12 +89,13 @@
 
 async function mainEvent(){
  
+    // header functionality 
     const driver_page = document.querySelectorAll('.driver_button');
     const team_page = document.querySelectorAll('.team_button');
 
     driver_page.forEach( item => {
         item.addEventListener('click', (event) => {
-            console.log(item.innerHTML);
+            //console.log(item.innerHTML);
             localStorage.clear;
             localStorage.setItem('Driver',item.innerHTML);
         }); 
@@ -102,11 +103,12 @@ async function mainEvent(){
 
     team_page.forEach( item => {
         item.addEventListener('click',(event) => {
-            console.log(item.innerHTML);
+            //console.log(item.innerHTML);
             localStorage.setItem('Team',item.innerHTML)
         });
     });
 
+ // page functionality 
  const left_button = document.querySelector("#left_button");
  const right_button = document.querySelector('#right_button');
  const logo_img = new Map([
