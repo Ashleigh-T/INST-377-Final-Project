@@ -1,113 +1,136 @@
 
 
 // ALL FUCNTIONS FOR DRIVERS PAGE 
-function injectDriverNameAndPhoto(name,photo){
-    //console.log('inside injectDriverName+Photo');
-    let spot = document.querySelector('#driver_name > h2');
-    //console.log(spot);
-    spot.innerHTML = '<h2>'+ name +'</h2>'
-    spot = document.querySelector('.photo');
-    //console.log(spot);
-    spot.querySelector('img').src = photo;
-};
 
-function injectInfoBox(team,key,curr_standings,hist_standings){
-    let spot = document.querySelector('.info_box > p:nth-of-type(1)');
-        spot.innerHTML = 'Team: '+ team;
+// left side injections 
+    function injectDriverNameAndPhoto(name,photo){
+        //console.log('inside injectDriverName+Photo');
+        let spot = document.querySelector('#driver_name > h2');
+        //console.log(spot);
+        spot.innerHTML = '<h2>'+ name +'</h2>'
+        spot = document.querySelector('.photo');
+        //console.log(spot);
+        spot.querySelector('img').src = photo;
+    };
 
-    let index = -1;
-        for(let i = 0; i <20 ; i++){
-            if (curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.driverId == key){
-                index = i;
+    function injectInfoBox(team,key,curr_standings,hist_standings){
+        let spot = document.querySelector('.info_box > p:nth-of-type(1)');
+            spot.innerHTML = 'Team: '+ team;
+
+        let index = -1;
+            for(let i = 0; i <20 ; i++){
+                if (curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[i].Driver.driverId == key){
+                    index = i;
+                };
+            };
+            //console.log(index);
+
+        spot = document.querySelector('.info_box > p:nth-of-type(2)');
+            spot.innerHTML = 'Driver #: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].Driver.permanentNumber;
+        spot = document.querySelector('.info_box > p:nth-of-type(3)');
+            spot.innerHTML = 'Rank: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].position;
+        spot = document.querySelector('.info_box > p:nth-of-type(4)');
+            spot.innerHTML = 'Points: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].points;
+        spot = document.querySelector('.info_box > p:nth-of-type(5)');
+            spot.innerHTML = 'Debut: ' + hist_standings.MRData.StandingsTable.StandingsLists[0].season;
+    };
+
+// position injections 
+    function injectGridPosition(grid_positions,race_names){
+        for(let i = 1; i < 6; i++){
+            if(grid_positions[i-1] != null){
+            let spot = document.querySelector("#GB"+i+'> p:first-of-type');
+                //console.log(spot);
+                spot.innerHTML = race_names[i-1];
+            spot = document.querySelector("#GB"+i+'> p:last-of-type')
+                //console.log(spot);
+                spot.innerHTML = grid_positions[i-1];
             };
         };
-        //console.log(index);
 
-    spot = document.querySelector('.info_box > p:nth-of-type(2)');
-        spot.innerHTML = 'Driver #: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].Driver.permanentNumber;
-    spot = document.querySelector('.info_box > p:nth-of-type(3)');
-        spot.innerHTML = 'Rank: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].position;
-    spot = document.querySelector('.info_box > p:nth-of-type(4)');
-        spot.innerHTML = 'Points: ' + curr_standings.MRData.StandingsTable.StandingsLists[0].DriverStandings[index].points;
-    spot = document.querySelector('.info_box > p:nth-of-type(5)');
-        spot.innerHTML = 'Debut: ' + hist_standings.MRData.StandingsTable.StandingsLists[0].season;
-};
 
-function injectGridPosition(grid_positions,race_names){
-    for(let i = 1; i < 6; i++){
-        if(grid_positions[i-1] != null){
-        let spot = document.querySelector("#GB"+i+'> p:first-of-type');
-            //console.log(spot);
-            spot.innerHTML = race_names[i-1];
-        spot = document.querySelector("#GB"+i+'> p:last-of-type')
-            //console.log(spot);
-            spot.innerHTML = grid_positions[i-1];
-        };
     };
 
-
-};
-
-function injectFinishingPostion(finishing_positions,race_names){
-    for(let i = 1; i < 6; i++){
-        if(finishing_positions[i-1] != null){
-        let spot = document.querySelector("#FB"+i+'> p:first-of-type');
-            //console.log(spot);
-            spot.innerHTML = race_names[i-1];
-        spot = document.querySelector("#FB"+i+'> p:last-of-type')
-            //console.log(spot);
-            spot.innerHTML = finishing_positions[i-1];
+    function injectFinishingPostion(finishing_positions,race_names){
+        for(let i = 1; i < 6; i++){
+            if(finishing_positions[i-1] != null){
+            let spot = document.querySelector("#FB"+i+'> p:first-of-type');
+                //console.log(spot);
+                spot.innerHTML = race_names[i-1];
+            spot = document.querySelector("#FB"+i+'> p:last-of-type')
+                //console.log(spot);
+                spot.innerHTML = finishing_positions[i-1];
+            };
         };
+
     };
 
-};
+// stats box 
+    function injectQBoxes(q_times){
+        for(let i = 1; i<4; i++){
+            let spot = document.querySelector('#q'+ i +' > p:last-of-type');
+            //console.log(spot);
+            spot.innerHTML = q_times[i-1];
+        }
+    };
 
-function injectQBoxes(q_times){
-    for(let i = 1; i<4; i++){
-        let spot = document.querySelector('#q'+ i +' > p:last-of-type');
-        //console.log(spot);
-        spot.innerHTML = q_times[i-1];
-    }
-};
+    function injectLeftStats(prev_quali,prev_stats){
+        let spot = document.querySelector('#prev_q_time > p');
+            //console.log(spot);
+            spot.innerHTML = 'Previous Qualifying Time: ' + prev_quali.MRData.RaceTable.Races[0].QualifyingResults[0].Q3;
+        spot = document.querySelector('#prev_grid > p');
+            //console.log(spot);
+            spot.innerHTML = 'Previous Grid Postion: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].grid;
+        spot = document.querySelector('#prev_finishing > p');
+            //console.log(spot);
+            spot.innerHTML = 'Previous Finishing Position: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].position;
+    };
 
-function injectLeftStats(prev_quali,prev_stats){
-    let spot = document.querySelector('#prev_q_time > p');
-        //console.log(spot);
-        spot.innerHTML = 'Previous Qualifying Time: ' + prev_quali.MRData.RaceTable.Races[0].QualifyingResults[0].Q3;
-    spot = document.querySelector('#prev_grid > p');
-        //console.log(spot);
-        spot.innerHTML = 'Previous Grid Postion: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].grid;
-    spot = document.querySelector('#prev_finishing > p');
-        //console.log(spot);
-        spot.innerHTML = 'Previous Finishing Position: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].position;
-};
+    function injectRightStats(prev_stats,circuit_name,round){
+        let spot = document.querySelector('#prev_fast_lap > p');
+            //console.log(spot);
+            spot.innerHTML = 'Previous Fastest Lap: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].FastestLap.Time.time;
+        spot = document.querySelector('#sprint > p');
+            //console.log(spot);
+            if(circuit_name.MRData.RaceTable.Races[0].Sprint != undefined){
+                spot.innerHTML = 'Sprint: ' + circuit_name.MRData.RaceTable.Races[0].Sprint.time;
+            } else {
+                spot.innerHTML = 'Sprint: No';
+            };
+        spot = document.querySelector('#round > p');
+            //console.log(spot);
+            spot.innerHTML = 'Round: ' + round;
+    };
 
-function injectRightStats(prev_stats,circuit_name,round){
-    let spot = document.querySelector('#prev_fast_lap > p');
-        console.log(spot);
-        spot.innerHTML = 'Previous Fastest Lap: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].FastestLap.Time.time;
-    spot = document.querySelector('#sprint > p');
-        console.log(spot);
-        if(circuit_name.MRData.RaceTable.Races[0].Sprint != undefined){
-            spot.innerHTML = 'Sprint: ' + circuit_name.MRData.RaceTable.Races[0].Sprint.time;
-        } else {
-            spot.innerHTML = 'Sprint: No';
-        };
-    spot = document.querySelector('#round > p');
-        console.log(spot);
-        spot.innerHTML = 'Round: ' + round;
-};
+    function injectRaceName(circuit_info){
+        let spot = document.querySelector('.top > h3:nth-child(2)');
+            //console.log(spot);
+            spot.innerHTML = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitName;
+            
+    };
 
-function injectRaceName(circuit_info){
-    let spot = document.querySelector('.top > h3:nth-child(2)');
-        console.log(spot);
-        spot.innerHTML = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitName;
-        
-};
 
 async function mainEvent(){
 
-    console.log('in main event');
+    const driver_page = document.querySelectorAll('.driver_button');
+    const team_page = document.querySelectorAll('.team_button');
+
+    driver_page.forEach( item => {
+        item.addEventListener('click', (event) => {
+            console.log(item.innerHTML);
+            localStorage.clear;
+            localStorage.setItem('Driver',item.innerHTML);
+        }); 
+    });
+
+    team_page.forEach( item => {
+        item.addEventListener('click',(event) => {
+            console.log(item.innerHTML);
+            localStorage.setItem('Team',item.innerHTML)
+        });
+    });
+
+    console.log(localStorage.getItem('Driver'));
     const left_button = document.querySelector('#left_button');
     const right_button = document.querySelector('#right_button');
 
@@ -243,8 +266,8 @@ async function mainEvent(){
         //console.log(address);
         results = await fetch(address);
         circuit_info = await results.json();
-        console.log('circuit info');
-        console.log(circuit_info);
+        //console.log('circuit info');
+        //console.log(circuit_info);
         circuit_name = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitId;
 
             

@@ -88,6 +88,24 @@
 
 
 async function mainEvent(){
+ 
+    const driver_page = document.querySelectorAll('.driver_button');
+    const team_page = document.querySelectorAll('.team_button');
+
+    driver_page.forEach( item => {
+        item.addEventListener('click', (event) => {
+            console.log(item.innerHTML);
+            localStorage.clear;
+            localStorage.setItem('Driver',item.innerHTML);
+        }); 
+    });
+
+    team_page.forEach( item => {
+        item.addEventListener('click',(event) => {
+            console.log(item.innerHTML);
+            localStorage.setItem('Team',item.innerHTML)
+        });
+    });
 
  const left_button = document.querySelector("#left_button");
  const right_button = document.querySelector('#right_button');
