@@ -98,6 +98,13 @@ function injectRightStats(prev_stats,circuit_name,round){
         spot.innerHTML = 'Round: ' + round;
 };
 
+function injectRaceName(circuit_info){
+    let spot = document.querySelector('.top > h3:nth-child(2)');
+        console.log(spot);
+        spot.innerHTML = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitName;
+        
+};
+
 async function mainEvent(){
 
     console.log('in main event');
@@ -245,13 +252,13 @@ async function mainEvent(){
     address = 'https://ergast.com/api/f1/2022/drivers/'+ drivers.get(driver) +'/circuits/'+ circuit_name +'/results.json';
         results = await fetch(address);
         const prev_stats = await results.json();
-        console.log(prev_stats);
+        //console.log(prev_stats);
            
     // Previous qualifying
     address = 'https://ergast.com/api/f1/2022/drivers/'+ drivers.get(driver) +'/circuits/'+ circuit_name +'/qualifying.json';
             results = await fetch(address);
             const prev_quali = await results.json();
-            console.log(prev_quali);
+            //console.log(prev_quali);
 
 
     // ALL INJECTTIONS 
@@ -265,6 +272,7 @@ async function mainEvent(){
     injectFinishingPostion(finishing_positions,race_names);
 
     // all stats box injections 
+    injectRaceName(circuit_info);
     injectQBoxes(q_times);
     injectLeftStats(prev_quali,prev_stats);
     injectRightStats(prev_stats,circuit_info,Number(last_round) + 1);
