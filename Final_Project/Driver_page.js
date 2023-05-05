@@ -70,11 +70,22 @@ function injectQBoxes(q_times){
     }
 };
 
-function injectLeftStats(){
-
+function injectLeftStats(prev_quali,prev_stats){
+    let spot = document.querySelector('#prev_q_time > p');
+        //console.log(spot);
+        spot.innerHTML = 'Previous Qualifying Time: ' + prev_quali.MRData.RaceTable.Races[0].QualifyingResults[0].Q3;
+    spot = document.querySelector('#prev_grid > p');
+        //console.log(spot);
+        spot.innerHTML = 'Previous Grid Postion: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].grid;
+    spot = document.querySelector('#prev_finishing > p');
+        //console.log(spot);
+        spot.innerHTML = 'Previous Finishing Position: ' + prev_stats.MRData.RaceTable.Races[0].Results[0].position;
 };
 
-function injectRightStats(){
+function injectRightStats(prev_stats,circuit_name,round){
+    let spot = document.querySelector('#prev_fast_lap > p');
+        console.log(spot);
+        spot.innerHTML = 'Previous Fastest Lap: ' + 
 
 };
 
@@ -137,7 +148,7 @@ async function mainEvent(){
     // current standings 
     let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
         const curr_standings= await results.json();
-        console.log(curr_standings);
+        //console.log(curr_standings);
 
     // historical standings 
     let address = 'http://ergast.com/api/f1/drivers/'+drivers.get(driver)+'/driverStandings.json';
@@ -190,7 +201,7 @@ async function mainEvent(){
         address = 'https://ergast.com/api/f1/2023/'+ last_round + 1 +'/drivers/'+ drivers.get(driver) +'/qualifying.json';
             results = await fetch(address);
             q_data = await results.json();
-            console.log(q_data);
+            //console.log(q_data);
             try{
                 q_times[0] = q_data.MRData.RaceTable.Races[0].QualifyingResults[0].Q1;
             }catch(error){
@@ -209,8 +220,29 @@ async function mainEvent(){
                 q_times[2] = null;
             };
         //console.log(q_times);
+
+    // circuit name + sprint yay or nah
+
+    address = 'http://ergast.com/api/f1/2023/'+ (Number(last_round) + 1 ) +'.json';
+        //console.log(address);
+        results = await fetch(address);
+        cicuit_info = await results.json();
+        //console.log(cicuit_info);
+        circuit_name = cicuit_info.MRData.RaceTable.Races[0].Circuit.circuitId;
+
             
-            
+    // Previous grid + finsihing + fastest lap
+    address = 'https://ergast.com/api/f1/2022/drivers/'+ drivers.get(driver) +'/circuits/'+ circuit_name +'/results.json';
+        results = await fetch(address);
+        const prev_stats = await results.json();
+        console.log(prev_stats);
+           
+    // Previous qualifying
+    address = 'https://ergast.com/api/f1/2022/drivers/'+ drivers.get(driver) +'/circuits/'+ circuit_name +'/qualifying.json';
+            results = await fetch(address);
+            const prev_quali = await results.json();
+            console.log(prev_quali);
+
 
     // ALL INJECTTIONS 
 
@@ -224,6 +256,8 @@ async function mainEvent(){
 
     // all stats box injections 
     injectQBoxes(q_times);
+    injectLeftStats(prev_quali,prev_stats);
+    injectRightStats(prev_stats,circuit_name,Number(last_round) + 1);
 
 };
 
