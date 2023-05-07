@@ -3,16 +3,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href= "Header.css"/>
+    <link rel = 'stylesheet' href = 'Team_page.css'/>
     <title>Formula One Stats</title>
 </head>
 
 <body>
-    <div>
-        <h1>Formula One Stats</h1>
-    </div>
+    <div class = 'header'>
+        <div>
+            <h1>Formula One Stats</h1>
+        </div>
 
-    <div>
-        <!-- hamburger menu -->
+        <div>
+            <ul class = 'menu'>
+                <li class = "menu_button"><a href = 'About.html'>About</a></li>
+                <li class = "menu_button"><a href = 'TrackData.html'>Track</a></li>
+                <li class = 'dropdown menu_button'><span>Drivers</span>
+                    <ul class = 'features_menu'>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Max Verstappen</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Sergio Perez</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Lewis Hamilton</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>George Russell</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Pierre Gasly</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Esteban Ocon</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Fernando Alonso</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Lance Stroll</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Yuki Tsunoda</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Nyck De Vries</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Charles Leclerc</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Carlos Sainz</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Lando Norris</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Oscar Piastri</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Valtteri Bottas</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Zhou Guanyu</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Kevin Magnussen</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Nico Hulkenberg</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Alex Albon</a></li>
+                        <li><a class = 'driver_button' href = 'DriverPage.html'>Logan Sargeant</a></li>
+                    </ul>
+                </li>
+                <li class = 'dropdown menu_button'><span>Teams</span>
+                    <ul class = 'features_menu team'>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>RedBull</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Mercedes</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Alpine</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Aston Martin</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>AlphaTauri</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Ferrari</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>McLaren</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Alfa Romeo</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Haas</a></li>
+                        <li><a class = 'team_button' href = 'TeamPage.html'>Williams</a></li>
+                    </ul>
+            </ul>
+         </div>
     </div>
 
     <div class = 'wrapper'>
@@ -25,93 +69,107 @@
 
             <div class = 'drivers'>
 
-                <div id = 'image1'>
-                    <img src = ''/>
+                <div class = 'image' id = 'image1'>
+                    <img src = 'Photos/Ferrari/charles.jpg'/>
                 </div>
 
                 <div class = 'stats'>
                     <h3>Driver Stats</h3>
-                    <li id = 'driver_stats1'></li>
-                    <li id = 'driver_stats2'></li>
+                    <div class = container>
+                        <div class = 'info' id = 'driver_stats1'>
+                            <li>#</li>
+                            <li>Rank</li>
+                            <li>Points</li>
+                            <li>Debut with Team</li>
+                        </div>
+                        <div class = 'info'id = 'driver_stats2'>
+                            <li>#</li>
+                            <li>Rank</li>
+                            <li>Points</li>
+                            <li>Debut with Team</li>
+                        </div>
+                    </div>
                 </div>
 
-                <div id = 'image2'>
-                    <img src = ''/>
+                <div class = 'image' id = 'image2'>
+                    <img src = 'Photos/Ferrari/carlos.jpg'/>
                 </div>
 
             </div>
 
             <div class = 'race_record D1'>
-                <h3>
-                    Driver Name 
-                    Race Record 
-                </h3>
 
-                <button class = 'left_button'></button>
+                <div class = box>
+                    <h3>Driver Name </h3>
+                    <h3>Race Record </h3>
+                </div>
 
-                <div class = 'race_record'id = 'RR1.1'>
+                <button class = 'button'>Backwards</button>
+
+                <div class = 'box'id = 'RR11'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR1.2'>
+                <div class = 'box'id = 'RR12'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR1.3'>
+                <div class = 'box'id = 'RR13'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR1.4'>
+                <div class = 'box'id = 'RR14'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR1.5'>
+                <div class = 'box'id = 'RR15'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <button class = 'right_button'></button>
+                <button class = 'button'>Forwards</button>
 
             </div>
 
             <div class = 'race_record D2'>
-                <h3>
-                    Driver Name 
-                    Race Record 
-                </h3>
 
-                <button class = 'left_button'></button>
+                <div class = 'box'>
+                    <h3>Driver Name</h3>
+                    <h3>Race Record </h3>
+                </div>
 
-                <div class = 'race_record'id = 'RR2.1'>
+                <button class = 'button'>Backwards</button>
+
+                <div class = 'box'id = 'RR21'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR2.2'>
+                <div class = 'box'id = 'RR22'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR2.3'>
+                <div class = 'box'id = 'RR23'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR2.4'>
+                <div class = 'box'id = 'RR24'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <div class = 'race_record'id = 'RR2.5'>
+                <div class = 'box'id = 'RR25'>
                     <p>Race Name</p>
                     <p>Finishing Position</p>
                 </div>
 
-                <button class = 'right_button'></button>
+                <button class = 'button'>Forwards</button>
 
             </div>
 
@@ -120,19 +178,21 @@
         <div class = 'right_side'>
 
             <div class = 'info_box'>
+                <img class = 'logo' src = ''/>
                 <p>Team Principle: </p>
-                <p>Constructor Rank</p>
-                <p>Points</p>
-                <p>Debut Year</p>
+                <p>Constructor Rank: </p>
+                <p>Points: </p>
+                <p>Debut Year: </p>
             </div>
 
             <div id = 'car'>
-                <img src = ''/>
+                <img src = 'Photos/Ferrari/Ferrari car.jpg'/>
             </div>
 
         </div>
 
     </div>
+    <script src="Team_page.js"></script>
     
 </body>
 

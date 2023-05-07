@@ -4,102 +4,270 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href = 'Final_Project/Header.css'/>
+    <link rel = 'stylesheet' href = 'Final_Project/Main_page.css'/>
     <title>Formula One Stats</title>
 </head>
 
 
 <body>
-    <div>
-        <h1>Formula One Stats</h1>
-    </div>
-
-    <div>
-        <!-- hamburger  hi menu-->
-    </div>
-
-    <div class = 'wrapper'>
-
-        <div class = 'right_side' id = 'driver_rankings'>
-            <h2>Driver Ranking</h2>
-            <!-- driver rankings go here-->
-            <li class ='info rank'>#</li>
-            <li class = 'info' id = 'names'>Name</li>
-            <li class = 'info points'>Pts.</li>
+    <div class = 'header'>
+        <div>
+            <h1>Formula One Stats</h1>
         </div>
 
+        <div>
+            <ul class = 'menu'>
+                <li class = "menu_button"><a href = 'Final_Project/About.html'>About</a></li>
+                <li class = "menu_button"><a href = 'Final_Project/TrackData.html'>Track</a></li>
+                <li class = 'dropdown menu_button'><span>Drivers</span>
+                    <ul class = 'features_menu'>
+                        <li><a class = 'driver_button' target = '_blank' href = 'Final_Project/DriverPage.html'>Max Verstappen</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Sergio Perez</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Lewis Hamilton</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>George Russell</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Pierre Gasly</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Esteban Ocon</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Fernando Alonso</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Lance Stroll</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Yuki Tsunoda</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Nyck De Vries</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Charles Leclerc</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Carlos Sainz</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Lando Norris</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Oscar Piastri</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Valtteri Bottas</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Zhou Guanyu</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Kevin Magnussen</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Nico Hulkenberg</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Alex Albon</a></li>
+                        <li><a class = 'driver_button'  href = 'Final_Project/DriverPage.html'>Logan Sargeant</a></li>
+                    </ul>
+                </li>
+                <li class = 'dropdown menu_button'><span>Teams</span>
+                    <ul class = 'features_menu team'>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>RedBull</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Mercedes</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Alpine</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Aston Martin</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>AlphaTauri</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Ferrari</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>McLaren</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Alfa Romeo</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Haas</a></li>
+                        <li><a class = 'team_button' href = 'Final_Project/TeamPage.html'>Williams</a></li>
+                    </ul>
+            </ul>
+         </div>
+    </div>
+  
+   <div class = 'wrapper'>
+
         <div class = 'left_side'>
+            <div class ='title'>
+                <h2>Driver Ranking</h2> 
+            </div>
+            <!-- driver rankings go here-->
+            <li class = 'driver_info'>
+                <div class ='rank'>#</div>
+                <div class ='name'>Name</div>
+                <div class ='points'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>1</div>
+                <div class ='name' id = 'name1'>Name</div>
+                <div class ='points' id = 'points1'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>2</div>
+                <div class ='name' id = 'name2'>Name</div>
+                <div class ='points' id = 'points2'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>3</div>
+                <div class ='name' id = 'name3'>Name</div>
+                <div class ='points' id = 'points3'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>4</div>
+                <div class ='name' id = 'name4'>Name</div>
+                <div class ='points' id = 'points4'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>5</div>
+                <div class ='name' id = 'name5'>Name</div>
+                <div class ='points' id = 'points5'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>6</div>
+                <div class ='name' id = 'name6'>Name</div>
+                <div class ='points' id = 'points6'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>7</div>
+                <div class ='name' id = 'name7'>Name</div>
+                <div class ='points' id = 'points7'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>8</div>
+                <div class ='name' id = 'name8'>Name</div>
+                <div class ='points' id = 'points8'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>9</div>
+                <div class ='name' id = 'name9'>Name</div>
+                <div class ='points' id = 'points9'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>10</div>
+                <div class ='name' id = 'name10'>Name</div>
+                <div class ='points' id = 'points10'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>11</div>
+                <div class ='name' id = 'name11'>Name</div>
+                <div class ='points' id = 'points11'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>12</div>
+                <div class ='name' id = 'name12'>Name</div>
+                <div class ='points' id = 'points12'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>13</div>
+                <div class ='name' id = 'name13'>Name</div>
+                <div class ='points' id = 'points13'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>14</div>
+                <div class ='name' id = 'name14'>Name</div>
+                <div class ='points' id = 'points14'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>15</div>
+                <div class ='name' id = 'name15'>Name</div>
+                <div class ='points' id = 'points15'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>16</div>
+                <div class ='name' id = 'name16'>Name</div>
+                <div class ='points' id = 'points16'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>17</div>
+                <div class ='name' id = 'name17'>Name</div>
+                <div class ='points' id = 'points17'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>18</div>
+                <div class ='name' id = 'name18'>Name</div>
+                <div class ='points' id = 'points18'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>19</div>
+                <div class ='name' id = 'name19'>Name</div>
+                <div class ='points' id = 'points19'>Pts.</div>
+            </li>
+            <li class = 'driver_info'>
+                <div class ='rank'>20</div>
+                <div class ='name' id = 'name20'>Name</div>
+                <div class ='points' id = 'points20'>Pts.</div>
+            </li>
+        </div>
+
+        <div class = 'right_side'>
 
             <div class = 'box' id = 'constructor_rankings'>
                 <h2>Constructors Ranking</h2>
                 <!-- constructor rankings go here -->
-                <button id = 'left_button'></button>
+                <div class = 'info'>
 
-                <div class = 'box2' id = 'CR1'>
-                    <h3 class = 'rank'>Rank</h3>
-                    <img src = ''/>
-                    <h3 class = 'points'>Points</h3>
-                </div>
-
-                <div class = 'box2' id = 'CR2'>
-                    <h3 class = 'rank'>Rank</h3>
-                    <img src = ''/>
-                    <h3 class = 'points'>Points</h3>
-                </div>
-
-                <div class = 'box2' id = 'CR3'>
-                    <h3 class = 'rank'>Rank</h3>
-                    <img src = ''/>
-                    <h3 class = 'points'>Points</h3>
-                </div>
-
-                <div class = 'box2' id = 'CR4'>
-                    <h3 class = 'rank'>Rank</h3>
-                    <img src = ''/>
-                    <h3 class = 'points'>Points</h3>
-                </div>
-
-                <div class = 'box2' id = 'CR5'>
-                    <h3 class = 'rank'>Rank</h3>
-                    <img src = ''/>
-                    <h3 class = 'points'>Points</h3>
-                </div>
+                    <button type = 'button' id = 'left_button'>Backwards</button>
                 
-                <button id = 'right_button'></button>
+                        <div class = 'box2' id = 'CR1'>
+                            <h3 class = 'rank'>Rank</h3>
+                            <img class = 'image' src = ''/>
+                            <h3 class = 'points'>Points</h3>
+                        </div>
+
+                        <div class = 'box2' id = 'CR2'>
+                            <h3 class = 'rank'>Rank</h3>
+                            <img src = ''/>
+                            <h3 class = 'points'>Points</h3>
+                        </div>
+
+                        <div class = 'box2' id = 'CR3'>
+                            <h3 class = 'rank'>Rank</h3>
+                            <img src = ''/>
+                            <h3 class = 'points'>Points</h3>
+                        </div>
+
+                        <div class = 'box2' id = 'CR4'>
+                            <h3 class = 'rank'>Rank</h3>
+                            <img src = ''/>
+                            <h3 class = 'points'>Points</h3>
+                        </div>
+
+                        <div class = 'box2' id = 'CR5'>
+                            <h3 class = 'rank'>Rank</h3>
+                            <img src = ''/>
+                            <h3 class = 'points'>Points</h3>
+                        </div>
+                    
+                
+                    <button type = 'button' id = 'right_button'>Forwards</button>
+                </div>
             </div>
 
             <div class = 'box' id = 'next_race_stats'>
                 <!-- next race stats go here -->
                 <h2>Next Race Stats</h2>
+                <div class = 'info'>
+                    <div class = 'box3' id = 'NRS1'>
+                        <h3>Name</h3>
+                        <h4></h4>
+                    </div>
 
-                <div class = 'box3' id = 'NRS1'>
-                    <h3>Name</h3>
+                    <div class = 'box3' id = 'NRS2'>
+                        <h3>Country</h3>
+                        <h4></h4>
+                    </div>
+
+                    <div class = 'box3' id = 'NRS3'>
+                        <h3>Time</h3>
+                        <h4></h4>
+                    </div>
+
+                    <div class = 'box3' id = 'NRS4'>
+                        <h3>Round</h3>
+                        <h4></h4>
+                    </div>
                 </div>
+                <div class = 'info'>
+                    <div class = 'box3' id = 'NRS5'>
+                        <h3>Previous Pole Sitter</h3>
+                        <h4></h4>
+                    </div>
 
-                <div class = 'box3' id = 'NRS2'>
-                    <h3>Country</h3>
-                    <img/>
-                </div>
+                    <div class = 'box3' id = 'NRS6'>
+                        <h3>Previous Winner</h3>
+                        <h4></h4>
+                    </div>
 
-                <div class = 'box3' id = 'NRS3'>
-                    <h3>Time</h3>
-                </div>
+                    <div class = 'box3' id = 'NRS7'>
+                        <h3>Previous Fastest Lap</h3>
+                        <h4></h4>
+                    </div>
 
-                <div class = 'box3' id = 'NRS4'>
-                    <h3>Round</h3>
+                    <div class = 'box3' id = 'NRS8'>
+                        <h3>Last Year Raced</h3>
+                        <h4></h4>
+                    </div>
                 </div>
             </div>
-
         </div>
-
-        <div>
-            <p>Links to other pages while i work on hamburger menu </p>
-            <a href = "Final_Project/About.html">About Page</a>
-            <a href = "Final_Project/DriverPage.html">Drivers Page</a>
-            <a href = "Final_Project/TeamPage.html">Team Page</a>
-            <a href = "Final_Project/TrackData.html">Track Data Page</a>
-        </div>
-
-    </div>
-    
+    </div>  
+    <script src="Final_Project/Header.js"></script>
+    <script src="Main_page.js"></script>
 </body>
 </html>

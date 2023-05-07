@@ -1,0 +1,119 @@
+/* LEFT SIDE STYLING */
+.left_side {
+    background-color: darkgray;
+    border-style: dashed;
+    margin: 20px;
+    margin-left: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    height:fit-content;
+  }
+
+/* driver ranking styling*/
+.title{
+    text-align: center;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    padding: 10px;
+}
+
+.driver_info{
+    display:flex;
+    flex-direction:row;
+    
+}
+
+.rank, .points{
+    border: 2px;
+    border-bottom-style: solid;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+.name{
+    border:2px;
+    border-style: solid;
+    border-top-style: none;
+    padding: 10px 40px;
+}
+
+/* RIGHT SIDE STYLING*/
+
+.right_side{
+    display: flex;
+    flex-direction: column;
+    border-style: dashed;
+    margin: 20px;
+    width: 75%;
+}
+
+.right_side > p{
+    align-self: center;
+}
+
+.box{
+    display:flex;
+    border-style: dashed;
+    background-color:darkgray;
+    margin: 10px;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.info{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+    height: fit-content;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+/* constructors box styling */
+button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
+    padding:5px;
+    height: fit-content;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.box2 > .rank, .box2 > .points {
+    border-bottom-style:none;
+}
+
+.box2{
+    border-left-style: solid;
+    width: 20%;
+}
+
+.box2 > img{
+    width: 75%;
+}
+
+
+.box2:last-of-type{
+    border-right-style: solid;
+}
+
+/* styling for next race box */
+
+.box3{
+    border-left-style: solid;
+    width: 25%;
+    text-align: center;
+    height: 100px;
+}
+
+.box3:first-of-type{
+    border-left-style:none;
+}
+
+.box3 h3{
+    padding: 10px;
+}
