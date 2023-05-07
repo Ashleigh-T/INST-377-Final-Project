@@ -129,12 +129,12 @@ async function mainEvent(){
 // API CALLS BELOW 
 
 // Driver call
- let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
+ let results = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
     const driver_rankings = await results.json();
     //console.log(driver_rankings);
 
 // Constructor call
- results = await fetch ('http://ergast.com/api/f1/current/constructorStandings.json');
+ results = await fetch ('https://ergast.com/api/f1/current/constructorStandings.json');
     const constructors_ranking = await results.json();
     //console.log(constructors_ranking);
 
@@ -143,7 +143,7 @@ async function mainEvent(){
     //console.log(last_round);
 
 // current race result 
- results = await fetch('http://ergast.com/api/f1/current.json');
+ results = await fetch('https://ergast.com/api/f1/current.json');
     const races = await results.json();
     //console.log(races);
 

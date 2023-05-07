@@ -151,7 +151,7 @@ async function mainEvent(){
     // team info 
 
     // gives points + constructors rank 
-    let results = await fetch('http://ergast.com/api/f1/current/constructorStandings.json');
+    let results = await fetch('https://ergast.com/api/f1/current/constructorStandings.json');
         const constructor_info = await results.json();
         //console.log(constructor_info);
 
@@ -165,7 +165,7 @@ async function mainEvent(){
         console.log(team_info);
 
     // debut year 
-    results = await fetch('http://ergast.com/api/f1/constructors/'+ teams.get(team)+'/constructorStandings.json');
+    results = await fetch('https://ergast.com/api/f1/constructors/'+ teams.get(team)+'/constructorStandings.json');
         const debut = await results.json();
         console.log(debut);
 
