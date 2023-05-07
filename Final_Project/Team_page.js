@@ -25,8 +25,15 @@ function injectStats1(driver1_info,driver1_debut){
         spot.innerHTML = driver1_debut;
 };
 
-function injectStats2(){
-
+function injectStats2(driver2_info,driver2_debut){
+    let spot = document.querySelector('#driver_stats2 >li:nth-of-type(1)');
+        spot.innerHTML = driver2_info.Driver.permanentNumber;
+    spot = document.querySelector('#driver_stats2 >li:nth-of-type(2)');
+        spot.innerHTML = driver2_info.position;
+    spot = document.querySelector('#driver_stats2 >li:nth-of-type(3)');
+        spot.innerHTML = driver2_info.points;
+    spot = document.querySelector('#driver_stats2 >li:nth-of-type(4)');
+        spot.innerHTML = driver2_debut;
 };
 
 function injectRaceRecord1(){
@@ -200,7 +207,7 @@ async function mainEvent(){
                             drivers.get(driver2));
 
     injectStats1(driver1_info,driver1_debut);
-    injectStats2(driver2_debut,driver2_debut);
+    injectStats2(driver2_info,driver2_debut);
 
 
 };
