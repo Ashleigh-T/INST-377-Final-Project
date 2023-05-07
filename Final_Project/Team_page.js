@@ -40,10 +40,10 @@ function injectRaceRecord1(finishing_positions1,race_names){
     for(let i = 1; i < 6; i++){
         if(finishing_positions1[i-1] != null){
             let spot = document.querySelector("#RR1"+i + ' > p:first-of-type');
-                console.log(spot);
+                //console.log(spot);
                 spot.innerHTML = race_names[i-1];
             spot = document.querySelector("#RR1"+i+' > p:last-of-type')
-                console.log(spot);
+                //console.log(spot);
                 spot.innerHTML = finishing_positions1[i-1];
         };
     };
@@ -53,18 +53,18 @@ function injectRaceRecord2(finishing_positions2,race_names){
     for(let i = 1; i < 6; i++){
         if(finishing_positions2[i-1] != null){
             let spot = document.querySelector("#RR2"+i + ' > p:first-of-type');
-                console.log(spot);
+                //console.log(spot);
                 spot.innerHTML = race_names[i-1];
             spot = document.querySelector("#RR2"+i+' > p:last-of-type')
-                console.log(spot);
+                //console.log(spot);
                 spot.innerHTML = finishing_positions2[i-1];
         };
     };
 };
 
 function injectLogoAndCar(logo,car){
-    console.log(logo);
-    console.log(car);
+    //console.log(logo);
+    //console.log(car);
     let spot = document.querySelector('.info_box > img');
         spot.src = logo;
     spot = document.querySelector('#car > img');
@@ -73,7 +73,15 @@ function injectLogoAndCar(logo,car){
     
 };
 
-function injectInfoBox(){
+function injectInfoBox(principle,team_info,debut){
+    let spot = document.querySelector('.info_box > p:nth-of-type(1)');
+        spot.innerHTML = principle;
+    spot = document.querySelector('.info_box > p:nth-of-type(2)');
+        spot.innerHTML = team_info.position;
+    spot = document.querySelector('.info_box > p:nth-of-type(3)');
+        spot.innerHTML = team_info.points;
+    spot = document.querySelector('.info_box > p:nth-of-type(4)');
+        spot.innerHTML = debut.MRData.StandingsTable.StandingsLists[0].season;
 
 };
 
@@ -164,7 +172,7 @@ async function mainEvent(){
     // drivers - driverId's
     results = await fetch('https://ergast.com/api/f1/2023/constructors/'+ teams.get(team) +'/drivers.json');
         const team_drivers = await results.json();
-        console.log(team_drivers);
+        //console.log(team_drivers);
     
         const driver1 = team_drivers.MRData.DriverTable.Drivers[0].driverId;
         const driver2 = team_drivers.MRData.DriverTable.Drivers[1].driverId;
@@ -175,7 +183,7 @@ async function mainEvent(){
     // rank number points 
     results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
         const curr_standing = await results.json();
-        console.log(curr_standing);
+        //console.log(curr_standing);
         let driver1_info;
         let driver2_info;
         for(let i = 0; i < 20; i++){
@@ -186,8 +194,8 @@ async function mainEvent(){
                 driver2_info = curr_standing.MRData.StandingsTable.StandingsLists[0].DriverStandings[i];
             }
         };
-        console.log(driver1_info);
-        console.log(driver2_info);
+        //console.log(driver1_info);
+        //console.log(driver2_info);
 
     // driver 1 debut year 
     results = await fetch('https://ergast.com/api/f1/drivers/'+ driver1 +'/driverStandings.json');
@@ -256,9 +264,9 @@ async function mainEvent(){
         };
 
 
-        console.log(finishing_positions1);
-        console.log(finishing_positions2);
-        console.log(race_names);
+        //console.log(finishing_positions1);
+        //console.log(finishing_positions2);
+        //console.log(race_names);
 
     
 
@@ -277,7 +285,9 @@ async function mainEvent(){
     injectRaceRecord1(finishing_positions1,race_names);
     injectRaceRecord2(finishing_positions2,race_names);
 
+    // info box + car
     injectLogoAndCar('Photos/'+ team +'/logo.jpg','Photos/'+ team + '/car.jpg');
+    injectInfoBox('Hi',team_info,debut);
     
 
 
