@@ -36,8 +36,17 @@ function injectStats2(driver2_info,driver2_debut){
         spot.innerHTML = driver2_debut;
 };
 
-function injectRaceRecord1(){
-
+function injectRaceRecord1(finishing_positions1,race_names){
+    for(let i = 1; i < 6; i++){
+        if(finishing_positions1[i-1] != null){
+            let spot = document.querySelector("#RR1"+i + ' > p:first-of-type');
+                console.log(spot);
+                spot.innerHTML = race_names[i-1];
+            spot = document.querySelector("#RR1"+i+' > p:last-of-type')
+                console.log(spot);
+                spot.innerHTML = finishing_positions1[i-1];
+        };
+    };
 };
 
 function injectRaceRecord2(){
@@ -178,7 +187,7 @@ async function mainEvent(){
                     year_found = true;
                 };
             };
-        console.log(driver1_debut);
+       // console.log(driver1_debut);
 
     // driver 2 debut year 
     results = await fetch('https://ergast.com/api/f1/drivers/'+ driver2 +'/driverStandings.json');
@@ -194,8 +203,46 @@ async function mainEvent(){
                     year_found = true;
                 };
             };
-        console.log(driver2_debut);
+       // console.log(driver2_debut);
+    
 
+       // finishing postions for driver 1 + race names 
+        let finishing_positions1 = [];
+        let race_names = []
+        for(let i = 1; i < 6; i++){
+            try{
+                address = 'https://ergast.com/api/f1/2023/'+ i +'/drivers/'+ driver1 +'/results.json';
+                    results = await fetch(address);
+                    let finishing_data = await results.json();
+                    //console.log('finishing data')
+                    //console.log(finishing_data);
+                    finishing_positions1[i-1] = finishing_data.MRData.RaceTable.Races[0].Results[0].position;
+                    race_names [i-1] = finishing_data.MRData.RaceTable.Races[0].raceName;
+            } catch (error){
+                finishing_positions1[i-1] = null;
+                race_names [i-1] = null;
+            };
+        };
+
+        // finishing postions for driver 2
+        let finishing_positions2 = [];
+        for(let i = 1; i < 6; i++){
+            try{
+                address = 'https://ergast.com/api/f1/2023/'+ i +'/drivers/'+ driver2 +'/results.json';
+                    results = await fetch(address);
+                    let finishing_data = await results.json();
+                    //console.log('finishing data')
+                    //console.log(finishing_data);
+                    finishing_positions2[i-1] = finishing_data.MRData.RaceTable.Races[0].Results[0].position;
+            } catch (error){
+                finishing_positions2[i-1] = null; 
+            };
+        };
+
+
+        console.log(finishing_positions1);
+        console.log(finishing_positions2);
+        console.log(race_names);
 
     
 
@@ -208,6 +255,7 @@ async function mainEvent(){
 
     injectStats1(driver1_info,driver1_debut);
     injectStats2(driver2_info,driver2_debut);
+    injectRaceRecord1(finishing_positions1,race_names);
 
 
 };
