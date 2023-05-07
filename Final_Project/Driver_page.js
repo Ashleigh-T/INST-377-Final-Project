@@ -188,12 +188,12 @@ async function mainEvent(){
    // API REQUESTS 
 
     // current standings 
-    let results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
+    let results = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
         const curr_standings= await results.json();
         //console.log(curr_standings);
 
     // historical standings 
-    let address = 'http://ergast.com/api/f1/drivers/'+drivers.get(driver)+'/driverStandings.json';
+    let address = 'https://ergast.com/api/f1/drivers/'+drivers.get(driver)+'/driverStandings.json';
         results = await fetch(address);
         const hist_standings = await results.json();
         //console.log(hist_standings);
@@ -265,7 +265,7 @@ async function mainEvent(){
 
     // circuit name + sprint yay or nah
 
-    address = 'http://ergast.com/api/f1/2023/'+ (Number(last_round) + 1) +'.json';
+    address = 'https://ergast.com/api/f1/2023/'+ (Number(last_round) + 1) +'.json';
         //console.log(address);
         results = await fetch(address);
         circuit_info = await results.json();
