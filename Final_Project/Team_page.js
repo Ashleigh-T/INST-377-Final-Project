@@ -49,12 +49,28 @@ function injectRaceRecord1(finishing_positions1,race_names){
     };
 };
 
-function injectRaceRecord2(){
-
+function injectRaceRecord2(finishing_positions2,race_names){
+    for(let i = 1; i < 6; i++){
+        if(finishing_positions2[i-1] != null){
+            let spot = document.querySelector("#RR2"+i + ' > p:first-of-type');
+                console.log(spot);
+                spot.innerHTML = race_names[i-1];
+            spot = document.querySelector("#RR2"+i+' > p:last-of-type')
+                console.log(spot);
+                spot.innerHTML = finishing_positions2[i-1];
+        };
+    };
 };
 
-function injectLogoAndCar(){
-
+function injectLogoAndCar(logo,car){
+    console.log(logo);
+    console.log(car);
+    let spot = document.querySelector('.info_box > img');
+        spot.src = logo;
+    spot = document.querySelector('#car > img');
+        spot.src = car;
+        
+    
 };
 
 function injectInfoBox(){
@@ -253,9 +269,16 @@ async function mainEvent(){
                             'Photos/'+ team +'/'+ driver2 + '.jpg',
                             drivers.get(driver2));
 
+    // stats injections 
     injectStats1(driver1_info,driver1_debut);
     injectStats2(driver2_info,driver2_debut);
+
+    // race record injections 
     injectRaceRecord1(finishing_positions1,race_names);
+    injectRaceRecord2(finishing_positions2,race_names);
+
+    injectLogoAndCar('Photos/'+ team +'/logo.jpg','Photos/'+ team + '/car.jpg');
+    
 
 
 };
