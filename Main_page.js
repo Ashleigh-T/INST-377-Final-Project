@@ -118,7 +118,7 @@ async function mainEvent(){
         ['Aston Martin',"Final_Project/Photos/AstonMartin/logo.jpg"],
         ['Ferrari','Final_Project/Photos/Ferrari/logo.jpg'],
         ['Hass F1 Team','Final_Project/Photos/Hass/logo.jpg'],
-        ['McLaren','Final_Project/Photos/Mclaren/logo.jpg'],
+        ['McLaren','Final_Project/Photos/McLaren/logo.jpg'],
         ['Mercedes','Final_Project/Photos/Mercedes/logo.jpg'],
         ['Red Bull','Final_Project/Photos/RedBull/logo.jpg'],
         ['Williams','Final_Project/Photos/Williams/logo.jpg']
