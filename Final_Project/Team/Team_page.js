@@ -272,9 +272,9 @@ async function mainEvent(){
 
     // ALL INJECTIONS 
         
-    injectPhotosAndNames(team,'Photos/'+ team +'/'+ driver1 + '.jpg',
+    injectPhotosAndNames(team,'../Photos/'+ team +'/'+ driver1 + '.jpg',
                             drivers.get(driver1),
-                            'Photos/'+ team +'/'+ driver2 + '.jpg',
+                            '../Photos/'+ team +'/'+ driver2 + '.jpg',
                             drivers.get(driver2));
 
     // stats injections 
@@ -286,7 +286,7 @@ async function mainEvent(){
     injectRaceRecord2(finishing_positions2,race_names);
 
     // info box + car
-    injectLogoAndCar('Photos/'+ team +'/logo.jpg','Photos/'+ team + '/car.jpg');
+    injectLogoAndCar('../Photos/'+ team +'/logo.jpg','../Photos/'+ team + '/car.jpg');
     injectInfoBox('Hi',team_info,debut);
     
 
