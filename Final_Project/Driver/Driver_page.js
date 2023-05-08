@@ -290,7 +290,7 @@ async function mainEvent(){
     // ALL INJECTTIONS 
 
     // all left page injections 
-    injectDriverNameAndPhoto(driver,'Photos/'+ driver_team.get(driver)+ '/'+drivers.get(driver)+'.jpg');
+    injectDriverNameAndPhoto(driver,'../Photos/'+ driver_team.get(driver)+ '/'+drivers.get(driver)+'.jpg');
     injectInfoBox(driver_team.get(driver),drivers.get(driver),curr_standings,hist_standings);
     
     // all carousel injections 
