@@ -6,8 +6,8 @@
 .left_side{
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin: 40px;
+    width: 50%;
+    margin: 0px 100px;
 }
 
 #team_name{
@@ -43,11 +43,12 @@
     display: flex;
     flex-direction: column;
     background-color: beige;
-    height: 240px;
+    height: max-content;
     width: 150px;
     text-align: center;
     border-radius: 15px;
     padding-top: 10px;
+    align-self: center;
     
 }
 
@@ -60,6 +61,7 @@
     flex-direction: row;
     border-top-style:solid ;
     border-bottom-style: solid;
+    margin-bottom: 10px;
     width:150px;
 }
 
@@ -71,6 +73,14 @@
     border-bottom-style:solid ;
     text-align: center;
     width: 50%;
+}
+
+.info > li {
+    border-bottom-style: solid;
+}
+
+.info > li:last-of-type{
+    border-bottom-style: none;
 }
 
 .info:last-of-type, .info:nth-last-of-type(2){
@@ -105,7 +115,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px 0px;
 }
 
 .box:first-of-type{
@@ -120,8 +132,11 @@
 
 .right_side{
     display:flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     margin: 40px;
+    width: 40%
 }
 
 .info_box{
@@ -129,8 +144,8 @@
     flex-direction: column;
     background-color: beige;
     border-radius: 15px;
-    width: 400px;
-    margin-left: 40px;
+    width: 100%;
+    margin-top: 50px;
     padding: 0px 20px;
 }
 
