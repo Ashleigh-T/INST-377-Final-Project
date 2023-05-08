@@ -63,8 +63,8 @@ function injectRaceRecord2(finishing_positions2,race_names){
 };
 
 function injectLogoAndCar(logo,car){
-    //console.log(logo);
-    //console.log(car);
+    console.log(logo);
+    console.log(car);
     let spot = document.querySelector('.info_box > img');
         spot.src = logo;
     spot = document.querySelector('#car > img');
@@ -181,6 +181,7 @@ async function mainEvent(){
     // driver info
 
     // rank number points 
+    results = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
         const curr_standing = await results.json();
         //console.log(curr_standing);
         let driver1_info;
