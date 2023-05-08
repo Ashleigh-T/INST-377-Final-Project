@@ -123,6 +123,13 @@
     margin-bottom: 50px;
 }
 
+.title{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 /* qualifying boxes */
 .q_boxes{
     display:flex;
