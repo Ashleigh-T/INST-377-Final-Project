@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href="../Header.css"/>
+    <link rel = 'stylesheet' href = 'Track_data_page.css'/>
+    <title>Formula One Stats</title>
+</head>
+
+<body>
+    <div class = 'header'>
+        <div>
+            <h1>Formula One Stats</h1>
+        </div>
+
+        <div>
+            <ul class = 'menu'>
+                <li class = "menu_button"><a href = '../About/index.html'>About</a></li>
+                <li class = "menu_button"><a href = '../Track/index.html'>Track</a></li>
+                <li class = 'dropdown menu_button'><span>Drivers</span>
+                    <ul class = 'features_menu'>
+                        <li><a href = '../Driver/index.html'>Max Verstappen</a></li>
+                        <li><a href = '../Driver/index.html'>Sergio Perez</a></li>
+                        <li><a href = '../Driver/index.html'>Lewis Hamilton</a></li>
+                        <li><a href = '../Driver/index.html'>George Russell</a></li>
+                        <li><a href = '../Driver/index.html'>Pierre Gasly</a></li>
+                        <li><a href = '../Driver/index.html'>Esteban Ocon</a></li>
+                        <li><a href = '../Driver/index.html'>Fernando Alonso</a></li>
+                        <li><a href = '../Driver/index.html'>Lance Stroll</a></li>
+                        <li><a href = '../Driver/index.html'>Yuki Tsunoda</a></li>
+                        <li><a href = '../Driver/index.html'>Nyck De Vries</a></li>
+                        <li><a href = '../Driver/index.html'>Charles Leclerc</a></li>
+                        <li><a href = '../Driver/index.html'>Carlos Sainz</a></li>
+                        <li><a href = '../Driver/index.html'>Lando Norris</a></li>
+                        <li><a href = '../Driver/index.html'>Oscar Piastri</a></li>
+                        <li><a href = '../Driver/index.html'>Valtteri Bottas</a></li>
+                        <li><a href = '../Driver/index.html'>Zhou Guanyu</a></li>
+                        <li><a href = '../Driver/index.html'>Kevin Magnussen</a></li>
+                        <li><a href = '../Driver/index.html'>Nico Hulkenberg</a></li>
+                        <li><a href = '../Driver/index.html'>Alex Albon</a></li>
+                        <li><a href = '../Driver/index.html'>Logan Sargeant</a></li>
+                    </ul>
+                </li>
+                <li class = 'dropdown menu_button'><span>Teams</span>
+                    <ul class = 'features_menu team'>
+                        <li><a href = '../Team/index.html'>RedBull</a></li>
+                        <li><a href = '../Team/index.html'>Mercedes</a></li>
+                        <li><a href = '../Team/index.html'>Alpine</a></li>
+                        <li><a href = '../Team/index.html'>Aston Martin</a></li>
+                        <li><a href = '../Team/index.html'>AlphaTauri</a></li>
+                        <li><a href = '../Team/index.html'>Ferrari</a></li>
+                        <li><a href = '../Team/index.html'>McLaren</a></li>
+                        <li><a href = '../Team/index.html'>Alfa Romeo</a></li>
+                        <li><a href = '../Team/index.html'>Haas</a></li>
+                        <li><a href = '../Team/index.html'>Williams</a></li>
+                    </ul>
+            </ul>
+         </div>
+    </div>
+
+    <div class = 'wrapper'>
+        <div class = 'left_side'>
+            <form class = 'main_form' action = ' ' method = 'get' >
+                <fieldset class = 'radio_buttons'>
+                    <input type = 'radio' id = 'formula1_team' name = 'formula1_team'/>
+                        <label class = 'lable' for = 'formula1_team'>Team</label>
+                    <input type = 'radio' id = 'formula1_track' name ='formula1_track'/>
+                        <label class = 'lable' for = 'formula1_track'>Track</label>
+                </fieldset>
+                <div class = 'team_track hidden'>
+                    <label for = 'choosen_team'>Choose Team</label>
+                    <textarea id = 'choosen_team' name = 'choosen_team'></textarea>
+                </div>
+                <div class = 'track_track hidden'>
+                    <label for = 'choosen_track'>Choose Track</label>
+                    <textarea id = 'choosen_track' name = 'choosen_track'></textarea>
+                </div>
+                <div>
+                    <button class = 'hidden' type = 'submit'>Load Results</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class = 'right_side'>
+            <p>Select filters to the left and watch the magic happen</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
