@@ -112,10 +112,10 @@ async function mainEvent(){
  const left_button = document.querySelector("#left_button");
  const right_button = document.querySelector('#right_button');
  const logo_img = new Map([
-        ['Alfa Romeo','Final_Project/Photos/AlfaRomeo/logo.jpg'],
+        ['Alfa Romeo','Final_Project/Photos/Alfa Romeo/logo.jpg'],
         ['AlphaTauri','Final_Project/Photos/AlphaTauri/logo.jpg'],
         ['Alpine F1 Team','Final_Project/Photos/Alpine/logo.jpg'],
-        ['Aston Martin',"Final_Project/Photos/AstonMartin/logo.jpg"],
+        ['Aston Martin',"Final_Project/Photos/Aston Martin/logo.jpg"],
         ['Ferrari','Final_Project/Photos/Ferrari/logo.jpg'],
         ['Hass F1 Team','Final_Project/Photos/Hass/logo.jpg'],
         ['McLaren','Final_Project/Photos/McLaren/logo.jpg'],
