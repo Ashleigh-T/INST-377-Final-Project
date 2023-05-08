@@ -103,7 +103,7 @@
     };
 
     function injectRaceName(circuit_info){
-        let spot = document.querySelector('.top > h3:nth-child(2)');
+        let spot = document.querySelector('.title > h3:nth-child(2)');
             //console.log(spot);
             spot.innerHTML = circuit_info.MRData.RaceTable.Races[0].Circuit.circuitName;
             

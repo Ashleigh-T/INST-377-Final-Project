@@ -4,6 +4,7 @@
 .left_side{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 25%;
     margin: 40px;
 }
@@ -12,11 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 80px;
     border-radius: 50px;
     margin-bottom: 20px;
     background-color: beige;
     padding: 10px;
+    width: 100%;
 }
 
 .photo{
@@ -39,6 +41,7 @@
     background-color: beige;
     border-radius: 15px;
     margin-top: 20px;
+    width: 75%;
 }
 
 /* RIGHT SIDE STYLING */
@@ -65,9 +68,16 @@
 }
 
 .button{
+    padding: 10px;
     height: 20px;
-    margin: 10px;
+    margin: 20px;
     width: 100px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: aquamarine;
 }
 
 .box{
@@ -77,13 +87,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px 10px;
 }
 
 .box:first-of-type{
     border-style: none;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
+    width:max-content;
 }
 
 .box:last-of-type{
@@ -108,6 +122,13 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 50px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 /* qualifying boxes */

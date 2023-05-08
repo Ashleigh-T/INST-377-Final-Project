@@ -1,11 +1,11 @@
 /* LEFT SIDE STYLING */
 .left_side {
     background-color: darkgray;
-    border-style: dashed;
     margin: 20px;
     margin-left: 100px;
     border-radius: 10px;
     display: flex;
+    width:300px;
     flex-direction:column;
     height:fit-content;
   }
@@ -21,22 +21,32 @@
 .driver_info{
     display:flex;
     flex-direction:row;
+    width: 100%;
+    justify-content: center;
     
 }
 
 .rank, .points{
     border: 2px;
     border-bottom-style: solid;
-    padding: 10px;
-    width: 50px;
+    width: 20%;
     text-align: center;
+    padding: 10px 0px;
+
 }
 
 .name{
     border:2px;
     border-style: solid;
     border-top-style: none;
-    padding: 10px 40px;
+    padding: 10px 0px;
+    width: 60%;
+    text-align: center;
+    
+}
+
+.driver_info:last-of-type{
+    margin-bottom: 20px;
 }
 
 /* RIGHT SIDE STYLING*/
@@ -44,18 +54,17 @@
 .right_side{
     display: flex;
     flex-direction: column;
-    border-style: dashed;
     margin: 20px;
     width: 75%;
 }
 
-.right_side > p{
+.right_side  h2{
     align-self: center;
+    padding: 10px 0px;;
 }
 
 .box{
     display:flex;
-    border-style: dashed;
     background-color:darkgray;
     margin: 10px;
     flex-direction: column;
@@ -67,7 +76,7 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     align-items: center;
     height: fit-content;
     border-top-style: solid;
@@ -75,12 +84,13 @@
 }
 
 /* constructors box styling */
-button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
-    padding:5px;
+button{ 
+    padding:10px;
     height: fit-content;
     background-color: aquamarine;
+    border-style: none;
     border-radius: 5px;
-    margin: 5px;
+    margin: 10px;
 }
 
 .box2 > .rank, .box2 > .points {
@@ -88,12 +98,21 @@ button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
 }
 
 .box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-left-style: solid;
     width: 20%;
+    height: 100%;
 }
 
 .box2 > img{
-    width: 75%;
+    height: 75px;
+}
+
+.box2 h3{
+    text-align: center;
 }
 
 
@@ -117,3 +136,10 @@ button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
 .box3 h3{
     padding: 10px;
 }
+
+#next_race_stats > .info:first-of-type{
+    margin-bottom: 0;
+    border-bottom-style:none;
+};
+
+
