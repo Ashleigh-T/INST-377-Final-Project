@@ -112,16 +112,16 @@ async function mainEvent(){
  const left_button = document.querySelector("#left_button");
  const right_button = document.querySelector('#right_button');
  const logo_img = new Map([
-        ['Alfa Romeo','Final_Project/Photos/AlfaRomeo/alfa romeo logo.jpg'],
-        ['AlphaTauri','Final_Project/Photos/AlphaTauri/alpha tauri logo.jpg'],
-        ['Alpine F1 Team','Final_Project/Photos/Alpine/alpine logo.jpg'],
-        ['Aston Martin',"Final_Project/Photos/AstonMartin/Aston-Martin logo.jpg"],
-        ['Ferrari','Final_Project/Photos/Ferrari/Ferrari-Logo.jpg'],
-        ['Hass F1 Team','Final_Project/Photos/Hass/haas logo.jpg'],
-        ['McLaren','Final_Project/Photos/Mclaren/mclaren logo.jpg'],
-        ['Mercedes','Final_Project/Photos/Mercedes/mercedes logo.jpg'],
-        ['Red Bull','Final_Project/Photos/RedBull/redbull logo.jpg'],
-        ['Williams','Final_Project/Photos/Williams/Williams logo.jpg']
+        ['Alfa Romeo','Final_Project/Photos/AlfaRomeo/logo.jpg'],
+        ['AlphaTauri','Final_Project/Photos/AlphaTauri/logo.jpg'],
+        ['Alpine F1 Team','Final_Project/Photos/Alpine/logo.jpg'],
+        ['Aston Martin',"Final_Project/Photos/AstonMartin/logo.jpg"],
+        ['Ferrari','Final_Project/Photos/Ferrari/logo.jpg'],
+        ['Hass F1 Team','Final_Project/Photos/Hass/logo.jpg'],
+        ['McLaren','Final_Project/Photos/Mclaren/logo.jpg'],
+        ['Mercedes','Final_Project/Photos/Mercedes/logo.jpg'],
+        ['Red Bull','Final_Project/Photos/RedBull/logo.jpg'],
+        ['Williams','Final_Project/Photos/Williams/logo.jpg']
     ]);
  
 
