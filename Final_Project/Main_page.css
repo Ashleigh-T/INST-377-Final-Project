@@ -84,12 +84,13 @@
 }
 
 /* constructors box styling */
-button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
-    padding:5px;
+button{ 
+    padding:10px;
     height: fit-content;
     background-color: aquamarine;
+    border-style: none;
     border-radius: 5px;
-    margin: 5px;
+    margin: 10px;
 }
 
 .box2 > .rank, .box2 > .points {
@@ -135,3 +136,10 @@ button{ /* THIS IS THE STYLING FOR ALL BUTTONS*/
 .box3 h3{
     padding: 10px;
 }
+
+#next_race_stats > .info:first-of-type{
+    margin-bottom: 0;
+    border-bottom-style:none;
+};
+
+
