@@ -181,7 +181,6 @@ async function mainEvent(){
     // driver info
 
     // rank number points 
-    results = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
         const curr_standing = await results.json();
         //console.log(curr_standing);
         let driver1_info;
